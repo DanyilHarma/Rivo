@@ -1,0 +1,16 @@
+@use "@styles/variables.scss";
+
+@mixin a($color, $family, $fontSize, $fontWeight, $hoverColor) {
+    font-family: $family;
+    text-decoration: none;
+    color: $color;
+    display: inline-block;
+    list-style-type: none;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+
+    &:hover {
+        text-decoration: none;
+        color: $hoverColor;
+    }
+}

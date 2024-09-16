@@ -1,0 +1,38 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.headerList {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+
+    .menu {
+        @include a($white, $secondFamily, 18px, 700, $yellow);
+        text-transform: uppercase;
+    }
+
+    .order {
+        @include a($yellow, $secondFamily, 17px, 400, $yellow);
+        padding: 15px 20px;
+        border: 1px solid;
+        width: 140px;
+        text-align: center;
+    }
+
+    a:not(.order) {
+        @include a($white, $firstFamily, 18px, 500, $yellow);
+        position: relative;
+
+        &:hover {
+            ::after {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $yellow;
+            }
+        }
+    }
+}

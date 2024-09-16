@@ -1,11 +1,13 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
+import js from '@eslint/js';
+import globals from 'globals';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+
+const isProduction = process.env.NODE_ENV === 'production' || false;
 
 export default [
-  { ignores: ['dist'] },
+  { ignores: ['dist', '**/*.ts', '**/*.tsx'] }, // Игнорирование файлов TypeScript
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
@@ -33,6 +35,9 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      'no-unused-vars': 'warn',
+      'no-debugger': isProduction ? 'error' : 'off'
     },
   },
-]
+];
+

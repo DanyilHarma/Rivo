@@ -1,0 +1,23 @@
+header {
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    position: relative;
+    width: fit-content;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -13px;
+        background-image: url(/src/assets/images/header/Rivo_logo_new_year.png);
+        background-position: center;
+        background-size: cover;
+        width: 111%;
+        height: 100%;
+    }
+}

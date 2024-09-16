@@ -1,0 +1,35 @@
+{
+    "navigationData": [
+        {
+            "element": "Services",
+            "href": ""
+        },
+        {
+            "element": "Projects",
+            "href": ""
+        },
+        {
+            "element": "Expertise",
+            "href": ""
+        },
+        {
+            "element": "Contacts",
+            "href": ""
+        },
+        {
+            "element": "Careers",
+            "href": ""
+        },
+        {
+            "element": "MAKE ORDER",
+            "class": "order",
+            "imgSrc": "../../../assets/images/general/icons/Arrow_icon.png",
+            "href": ""
+        },
+        {
+            "element": "Menu",
+            "class": "menu",
+            "href": ""
+        }
+    ]
+}
