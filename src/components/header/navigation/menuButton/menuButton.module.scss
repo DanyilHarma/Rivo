@@ -1,0 +1,10 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.menu {
+    @include a($white, $secondFamily, 18px, 700, $yellow);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}

@@ -1,17 +1,20 @@
 import { NavLink } from 'react-router-dom';
 import classes from './navigation.module.scss'
 import data from "./navigationData.json"
+import MakeOrderButton from './makeOrderButton/makeOrderButton';
+import MenuButton from './menuButton/menuButton';
 
 const Navigation = () => {
-    // debugger
     return (
         <nav>
-            <ul className={classes.headerList}>
+            <ul className={classes.headerListContainer}>
                 {data.navigationData.map((item, index) => (
-                    <NavLink className={item.class ? classes[item.class] : ""} to={item.href} key={index}><li>{item.element}</li>{item.imgSrc ? (<img src={item.imgSrc} />) : null}</NavLink>
+                    <NavLink className={`${classes.headerList} ${item.class ? classes[item.class] : ""}`} to={item.href} key={index}><li>{item.element}</li></NavLink>
                 ))}
+                <MakeOrderButton />
+                <MenuButton />
             </ul>
-        </nav>
+        </nav >
     )
 }
 
