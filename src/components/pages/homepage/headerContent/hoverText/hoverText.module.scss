@@ -1,0 +1,35 @@
+@use "@styles/variables.scss" as *;
+
+.hoverText {
+    position: relative;
+    display: inline-block;
+    font-family: $secondFamily;
+    font-weight: 900;
+    font-size: 140px;
+    color: transparent;
+    -webkit-text-stroke: 2px #dad9da;
+    overflow: hidden;
+    margin-left: 170px;
+
+    --x: -9999px;
+    --y: -9999px;
+
+    &::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $yellow;
+        -webkit-text-stroke-color: transparent;
+        background: none;
+        background-clip: text;
+        -webkit-background-clip: text;
+        pointer-events: none;
+        mask-image: radial-gradient(circle 100px at var(--x) var(--y), black 100%, transparent 100%);
+        mask-repeat: no-repeat;
+    }
+}
+
+.hoverText:last-of-type {
+    margin-left: -100px;
+}

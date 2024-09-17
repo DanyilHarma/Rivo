@@ -10,7 +10,8 @@
         },
         {
             "element": "Expertise",
-            "href": ""
+            "href": "",
+            "imgSrc": "https://github.com/DanyilHarma/Rivo/blob/master/src/assets/images/general/icons/ArrowBottom.png?raw=true"
         },
         {
             "element": "Contacts",

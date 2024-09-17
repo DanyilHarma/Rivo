@@ -1,10 +1,13 @@
+import ExploreButton from "./exploreButton/exploreButton";
 import classes from "./headerContent.module.scss"
+import HoverText from "./hoverText/hoverText"
 
 const HeaderContent = () => {
     return (
         <>
-            <span>We are Rivo Agency</span>
-            <p><span>WE HELP</span> <br /> <span>IDEAS</span> <br /> <span>TO CHANGE</span> <br /><span>THE WORLD</span></p>
+            <span className={classes.yellowText}>We are Rivo Agency </span>
+            <p><HoverText>WE HELP</HoverText> <br /> <span className={classes.whiteText}>IDEAS</span> <br /> <span className={classes.whiteText}>TO CHANGE</span> <br /><HoverText>THE WORLD</HoverText></p>
+            <ExploreButton />
         </>
     )
 }
