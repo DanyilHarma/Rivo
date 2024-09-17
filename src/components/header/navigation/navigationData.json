@@ -18,17 +18,7 @@
         },
         {
             "element": "Careers",
-            "href": ""
-        },
-        {
-            "element": "MAKE ORDER",
-            "class": "order",
-            "imgSrc": "../../../assets/images/general/icons/Arrow_icon.png",
-            "href": ""
-        },
-        {
-            "element": "Menu",
-            "class": "menu",
+            "class": "careers",
             "href": ""
         }
     ]

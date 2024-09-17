@@ -1,38 +1,40 @@
 @use "@styles/mixins.scss" as *;
 @use "@styles/variables.scss" as *;
 
-.headerList {
+.headerListContainer {
     display: flex;
-    gap: 50px;
+    gap: 70px;
     align-items: center;
+}
 
-    .menu {
-        @include a($white, $secondFamily, 18px, 700, $yellow);
-        text-transform: uppercase;
-    }
+.headerList {
+    @include a($white, $firstFamily, 18px, 500, $yellow);
+    position: relative;
 
-    .order {
-        @include a($yellow, $secondFamily, 17px, 400, $yellow);
-        padding: 15px 20px;
-        border: 1px solid;
-        width: 140px;
-        text-align: center;
-    }
-
-    a:not(.order) {
-        @include a($white, $firstFamily, 18px, 500, $yellow);
-        position: relative;
-
-        &:hover {
-            ::after {
-                content: "";
-                position: absolute;
-                bottom: -10px;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                background-color: $yellow;
-            }
+    &:hover {
+        ::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $yellow;
         }
+    }
+}
+
+.careers {
+    ::before {
+        content: "HOT";
+        position: absolute;
+        top: -8px;
+        right: -27px;
+        font-size: 12px;
+        font-family: $firstFamily;
+        font-weight: 600;
+        background-color: $yellow;
+        padding: 2px;
+        color: #000;
     }
 }
