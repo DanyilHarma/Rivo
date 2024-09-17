@@ -5,11 +5,11 @@
     @include a($yellow, $secondFamily, 17px, 400, $yellow);
     padding: 15px 20px;
     border: 1px solid;
-    width: 140px;
+    width: 180px;
     text-align: center;
     display: flex;
     align-items: center;
-    gap: 9px;
+    gap: 8px;
 
     &:hover img {
         transform: rotate(45deg);

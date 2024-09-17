@@ -2,20 +2,19 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import eslintPlugin from 'vite-plugin-eslint';
 import path from 'path';
-import { fileURLToPath } from 'url'; // Импортируем для работы с __dirname
+import { fileURLToPath } from 'url';
 
-// Определяем __dirname
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(({ mode }) => {
   const isProduction = mode === 'production';
 
-  console.log('Vite mode:', mode); // Логируем текущий режим (development или production)
+  console.log('Vite mode:', mode);
 
   return {
-    plugins: [react(), eslintPlugin()],
+    plugins: [react(), eslintPlugin({ overrideConfigFile: path.resolve(__dirname, './eslint.config.js') })],
     build: {
-      sourcemap: !isProduction, // Source Maps включены только в dev-режиме
+      sourcemap: !isProduction,
     },
     resolve: {
       alias: {

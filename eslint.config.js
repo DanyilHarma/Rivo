@@ -11,7 +11,7 @@ export default [
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 2021,
       globals: globals.browser,
       parserOptions: {
         ecmaVersion: 'latest',
@@ -36,8 +36,8 @@ export default [
         { allowConstantExport: true },
       ],
       'no-unused-vars': 'warn',
-      'no-debugger': isProduction ? 'error' : 'off'
+      'no-debugger': isProduction ? 'error' : 'off',
+      'react/prop-types': 'off',
     },
   },
 ];
-
