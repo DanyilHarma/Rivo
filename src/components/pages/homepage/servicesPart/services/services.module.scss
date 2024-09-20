@@ -1,0 +1,49 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.servicesContainer {
+    display: flex;
+    gap: 30px;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    img {
+        width: fit-content;
+        object-fit: contain;
+        max-height: 48px;
+    }
+
+    h5 {
+        @include h($white, $secondFamily, 24px, 700)
+    }
+
+    p {
+        @include h ($textColor, $firstFamily, 17px, 500)
+    }
+
+    >a {
+        @include a($yellow, $secondFamily, 17px, 400, $yellow);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        &:hover img {
+            transform: rotate(45deg);
+        }
+
+        span {
+            @include h ($yellow, $secondFamily, 17px, 400)
+        }
+
+        img {
+            width: 100%;
+            max-width: 14px;
+            height: 14px;
+            transition: transform 0.2s;
+        }
+    }
+}

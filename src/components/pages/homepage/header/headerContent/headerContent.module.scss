@@ -4,6 +4,7 @@
     font-family: $secondFamily;
     color: $yellow;
     font-size: 24px;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -21,16 +22,3 @@
 .whiteText:nth-of-type(3) {
     margin-left: 170px;
 }
-
-
-// .hoverText {
-//     font-family: $secondFamily;
-//     font-size: 140px;
-//     font-weight: bold;
-//     text-transform: uppercase;
-//     
-//     color: transparent;
-//     -webkit-text-stroke: 2px #dad9da;
-
-
-// }

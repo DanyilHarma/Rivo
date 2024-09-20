@@ -1,16 +1,25 @@
 @use "@styles/variables.scss";
 
-@mixin a($color, $family, $fontSize, $fontWeight, $hoverColor) {
-    font-family: $family;
-    text-decoration: none;
+@mixin commonTextStyles($color, $family, $fontSize, $fontWeight) {
     color: $color;
-    display: inline-block;
-    list-style-type: none;
+    font-family: $family;
     font-size: $fontSize;
     font-weight: $fontWeight;
+}
+
+@mixin a($color, $family, $fontSize, $fontWeight, $hoverColor) {
+    @include commonTextStyles($color, $family, $fontSize, $fontWeight);
+    text-decoration: none;
+    display: inline-block;
+    list-style-type: none;
+    width: fit-content;
 
     &:hover {
         text-decoration: none;
         color: $hoverColor;
     }
+}
+
+@mixin h($color, $family, $fontSize, $fontWeight) {
+    @include commonTextStyles($color, $family, $fontSize, $fontWeight);
 }
