@@ -1,0 +1,30 @@
+@use "@styles/variables.scss" as *;
+@use "@styles/mixins.scss" as *;
+
+.stackContainer {
+    display: flex;
+    gap: 40px;
+}
+
+.stack {
+    border: 1px solid $black;
+    width: 100%;
+    max-width: 160px;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    transition: box-shadow .2s;
+
+    &:hover {
+        box-shadow: -2px 2px 0px 0 $yellow;
+    }
+
+    span {
+        @include h($white, $firstFamily, 17px, 500);
+        // max-width: 160px;
+    }
+}

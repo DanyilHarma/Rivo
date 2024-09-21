@@ -3,7 +3,9 @@ import BootstrapContainer from "../../general/bootstrapContainer/bootstrapContai
 import Overlay from "../../general/overlay/overlay";
 import AboutPart from "./aboutPart/aboutPart";
 import HeaderContent from "./header/headerContent/headerContent";
+import IndustryExpertise from "./industryExpertise/industryExpertise";
 import ServicesPart from "./servicesPart/servicesPart";
+import StackPart from "./stackPart/stackPart";
 
 const Homepage = () => {
 
@@ -22,7 +24,12 @@ const Homepage = () => {
             <BootstrapContainer>
                 <ServicesPart servicesData={homepageData?.data?.attributes?.servicesData} />
             </BootstrapContainer>
-
+            <BootstrapContainer>
+                <IndustryExpertise industryExpertiseData={homepageData?.data?.attributes?.industryExpertise} />
+            </BootstrapContainer>
+            <BootstrapContainer>
+                <StackPart stackData={homepageData?.data?.attributes?.stackData} />
+            </BootstrapContainer>
         </>
     )
 }

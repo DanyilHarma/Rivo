@@ -1,0 +1,28 @@
+@use "@styles/variables.scss" as *;
+@use "@styles/mixins.scss" as *;
+
+.expertisesContainer {
+    display: flex;
+    gap: 40px;
+}
+
+.expertise {
+    border: 1px solid $black;
+    width: 100%;
+    max-width: 250px;
+    padding: 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: box-shadow .2s;
+
+    &:hover {
+        box-shadow: -2px 2px 0px 0 $yellow;
+    }
+
+    span {
+        @include h($white, $secondFamily, 24px, 700);
+        max-width: 160px;
+    }
+}
