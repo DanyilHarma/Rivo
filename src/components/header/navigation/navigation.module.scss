@@ -11,6 +11,11 @@
     @include a($white, $firstFamily, 18px, 500, $yellow);
     position: relative;
 
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 8px;
+
     &:hover {
         ::after {
             content: "";

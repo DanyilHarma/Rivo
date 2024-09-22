@@ -1,0 +1,12 @@
+@use "@styles/variables.scss" as *;
+@use "@styles/mixins.scss" as *;
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    h3 {
+        @include h($white, $secondFamily, 24px, 700)
+    }
+}

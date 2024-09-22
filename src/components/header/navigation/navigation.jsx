@@ -9,7 +9,7 @@ const Navigation = () => {
         <nav>
             <ul className={classes.headerListContainer}>
                 {data.navigationData.map((item, index) => (
-                    <NavLink className={`${classes.headerList} ${item.class ? classes[item.class] : ""}`} to={item.href} key={index}><li>{item.element}</li></NavLink>
+                    <NavLink className={`${classes.headerList} ${item.class ? classes[item.class] : ""}`} to={item.href} key={index}><li>{item.element}</li><img src={item.imgSrc} /></NavLink>
                 ))}
                 <MakeOrderButton />
                 <MenuButton />

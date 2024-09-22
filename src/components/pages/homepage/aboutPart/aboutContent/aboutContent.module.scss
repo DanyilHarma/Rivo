@@ -1,0 +1,49 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.aboutContantContainer {
+    display: flex;
+
+    p {
+        @include h($textColor, $firstFamily, 17px, 500)
+    }
+}
+
+.aboutContentWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 540px;
+    gap: 10px;
+}
+
+.aboutContantTitle {
+    @include h($white, $secondFamily, 24px, 700);
+    margin-bottom: .5rem;
+}
+
+.gradeContainer {
+    display: flex;
+    gap: 20px;
+
+    >img {
+        width: 100%;
+        max-width: 110px;
+        object-fit: contain;
+    }
+}
+
+.grade {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    span {
+        @include h($textColor, $firstFamily, 14px, 500);
+    }
+}
+
+.stars {
+    display: flex;
+    gap: 5px;
+}

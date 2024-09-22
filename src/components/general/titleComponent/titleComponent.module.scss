@@ -1,0 +1,17 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.titleContainer {
+    margin-bottom: 50px;
+}
+
+.title {
+    @include h($white, $secondFamily, 52px, 700);
+}
+
+.titleTransparent {
+    @include h(transparent, $secondFamily, 100px, 700);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 2px #1a1a1a;
+}

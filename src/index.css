@@ -10,3 +10,16 @@ a,
 button {
     cursor: url('assets/images/general/icons/Group.png'), auto
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0;
+}
+
+.row {
+    margin-left: 0;
+}

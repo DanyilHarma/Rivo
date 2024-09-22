@@ -1,0 +1,10 @@
+.servicesPartContainer {
+    position: relative;
+
+    >img {
+        position: absolute;
+        top: 10%;
+        right: -15%;
+        z-index: -1;
+    }
+}

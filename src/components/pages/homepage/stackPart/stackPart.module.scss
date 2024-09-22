@@ -1,0 +1,8 @@
+.stackContainer {
+    position: relative;
+
+    >img {
+        position: absolute;
+        z-index: -1;
+    }
+}

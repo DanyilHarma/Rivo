@@ -1,0 +1,24 @@
+@use "@styles/variables.scss" as *;
+
+.yellowText {
+    font-family: $secondFamily;
+    color: $yellow;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hoverText:last-of-type {
+    margin-left: -100px;
+}
+
+.whiteText {
+    font-family: $secondFamily;
+    font-weight: 900;
+    font-size: 140px;
+    color: $white;
+}
+
+.whiteText:nth-of-type(3) {
+    margin-left: 170px;
+}
