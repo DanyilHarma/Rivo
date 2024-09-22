@@ -6,8 +6,12 @@ export const apiSlice = createApi({
     endpoints: (builder) => ({
         getHomepageData: builder.query({
             query: () => "about-data"
+        }),
+        getProjectsData: builder.query({
+            query: () => "about-data?populate[rivo_projects][populate]=projectsData"
         })
-    })
+    }),
+
 })
 
-export const { useGetHomepageDataQuery } = apiSlice;
+export const { useGetHomepageDataQuery, useGetProjectsDataQuery } = apiSlice;

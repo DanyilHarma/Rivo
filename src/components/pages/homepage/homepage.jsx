@@ -4,6 +4,7 @@ import Overlay from "../../general/overlay/overlay";
 import AboutPart from "./aboutPart/aboutPart";
 import HeaderContent from "./header/headerContent/headerContent";
 import IndustryExpertise from "./industryExpertise/industryExpertise";
+import ProjectsPart from "./projectsPart/projectsPart";
 import ServicesPart from "./servicesPart/servicesPart";
 import StackPart from "./stackPart/stackPart";
 
@@ -20,15 +21,10 @@ const Homepage = () => {
             </Overlay>
             <BootstrapContainer>
                 <AboutPart aboutData={homepageData?.data?.attributes?.aboutData} />
-            </BootstrapContainer>
-            <BootstrapContainer>
                 <ServicesPart servicesData={homepageData?.data?.attributes?.servicesData} />
-            </BootstrapContainer>
-            <BootstrapContainer>
                 <IndustryExpertise industryExpertiseData={homepageData?.data?.attributes?.industryExpertise} />
-            </BootstrapContainer>
-            <BootstrapContainer>
                 <StackPart stackData={homepageData?.data?.attributes?.stackData} />
+                <ProjectsPart projectsData={homepageData?.data?.attributes?.projectsTitle} />
             </BootstrapContainer>
         </>
     )
