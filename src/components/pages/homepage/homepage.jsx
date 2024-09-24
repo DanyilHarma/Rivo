@@ -1,6 +1,8 @@
 import { useGetHomepageDataQuery } from "../../../redux/apiSlice";
 import BootstrapContainer from "../../general/bootstrapContainer/bootstrapContainer";
+import ContactsContainer from "../../general/contactsContainer/contactsContainer";
 import Overlay from "../../general/overlay/overlay";
+import Reviews from "../../general/reviews/reviews";
 import AboutPart from "./aboutPart/aboutPart";
 import HeaderContent from "./header/headerContent/headerContent";
 import IndustryExpertise from "./industryExpertise/industryExpertise";
@@ -25,6 +27,8 @@ const Homepage = () => {
                 <IndustryExpertise industryExpertiseData={homepageData?.data?.attributes?.industryExpertise} />
                 <StackPart stackData={homepageData?.data?.attributes?.stackData} />
                 <ProjectsPart projectsData={homepageData?.data?.attributes?.projectsTitle} />
+                <Reviews reviewsData={homepageData?.data?.attributes?.reviewsHomepageData} />
+                <ContactsContainer contactsData={homepageData?.data?.attributes?.contactsHomepageData} />
             </BootstrapContainer>
         </>
     )

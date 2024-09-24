@@ -1,0 +1,66 @@
+@use "@styles/variables.scss" as *;
+
+.reviewsContainer {
+    position: relative;
+
+    >img {
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+.indicatorsContainer {
+    margin-top: 50px;
+    display: flex;
+    gap: 855px;
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+
+        button {
+            border: 1px solid #5e5e5e;
+            border-radius: 50%;
+            background-color: transparent;
+            position: relative;
+            width: 56px;
+            height: 56px;
+            transition: border-color .2s;
+
+            &:hover {
+                border-color: $yellow;
+            }
+        }
+
+
+        button:first-of-type {
+            &::before {
+                content: "←";
+                color: #5e5e5e;
+                font-size: 24px;
+                position: absolute;
+                inset: 12% 30%;
+                transition: color .2s;
+            }
+        }
+
+        button:last-of-type {
+            &::before {
+                content: "→";
+                color: #5e5e5e;
+                font-size: 24px;
+                position: absolute;
+                inset: 12% 30%;
+                transition: color 0.2s;
+            }
+        }
+    }
+
+    .buttons button:first-of-type:hover::before {
+        color: $yellow;
+    }
+
+    .buttons button:last-of-type:hover::before {
+        color: $yellow;
+    }
+}

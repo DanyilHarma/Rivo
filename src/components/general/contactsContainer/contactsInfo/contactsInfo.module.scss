@@ -1,0 +1,27 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.contactsInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    h6 {
+        @include h($white, $secondFamily, 32px, 700);
+        line-height: 1.5;
+    }
+
+    >span {
+        @include h($textColor, $firstFamily, 18px, 500);
+    }
+
+    .numbers {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        span {
+            @include h($white, $firstFamily, 24px, 400);
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.videoContainerPlaying {
+
+    &::before,
+    &::after {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.videoContainer {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("http://localhost:1338/uploads/thumbnail_Video_100_d7b869039e.png?updatedAt=2024-09-20T07%3A14%3A17.401Z");
+        background-size: cover;
+        background-position: center;
+        z-index: 1;
+        pointer-events: none;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 46%;
+        height: 42px;
+        width: 32px;
+        background-image: url(http://localhost:1338/uploads/Play_icon_4e4d5396f9.png?updatedAt=2024-09-20T07%3A24%3A40.866Z);
+        background-size: cover;
+        background-position: center;
+        z-index: 2;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+}
+
+.progressRing {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    .progress {
+        fill: none;
+        stroke: $yellow;
+        stroke-width: 1;
+        transition: stroke-width 0.3s ease, stroke-dashoffset 0.3s ease;
+        pointer-events: none;
+    }
+}

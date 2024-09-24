@@ -1,0 +1,12 @@
+@use "@styles/variables.scss" as *;
+
+.circleBg {
+    fill: transparent;
+    stroke: #272727;
+}
+
+
+.circle {
+    fill: transparent;
+    stroke: $yellow ;
+}

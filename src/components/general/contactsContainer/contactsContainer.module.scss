@@ -1,0 +1,16 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.contactsContainer {
+    position: relative;
+
+    >img {
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+.contactsContent {
+    display: flex;
+    gap: 200px;
+}
