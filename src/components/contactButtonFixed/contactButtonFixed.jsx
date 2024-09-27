@@ -1,13 +1,25 @@
-import { NavLink } from "react-router-dom";
 import classes from "./contactButtonFixed.module.scss"
+import { useContactVisibility } from "../../context/contextVisibility.jsx";
 
 const ContactButtonFixed = () => {
+    const { isContactVisible, sectionRef } = useContactVisibility();
+
+    const handleClick = () => {
+        if (isContactVisible) {
+            window.scrollTo({ top: 0, behavior: "smooth" })
+        } else {
+
+            if (sectionRef.current) {
+                sectionRef.current.scrollIntoView({ behavior: "smooth" })
+            }
+        }
+    }
 
     return (
-        <NavLink className={classes.contactButton}>
-            {/* <img src="https://github.com/DanyilHarma/Rivo/blob/master/src/assets/images/general/backgroundImages/Contact%20us%20big.png?raw=true" alt="" /> */}
-
-        </NavLink>
+        <div className={classes.buttonContainer}>
+            <button className={`${classes.topButton} ${isContactVisible ? classes.visible : classes.hidden} `} onClick={handleClick} style={{ width: "70px", height: "70px" }}> </button>
+            <button to="#contactsSection" className={`${classes.contactButton} ${isContactVisible ? classes.hidden : classes.visible} `} onClick={handleClick}> </button>
+        </div>
     )
 }
 

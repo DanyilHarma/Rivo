@@ -23,3 +23,7 @@
 @mixin h($color, $family, $fontSize, $fontWeight) {
     @include commonTextStyles($color, $family, $fontSize, $fontWeight);
 }
+
+@mixin hoverButton($color, $family, $fontSize, $fontWeight) {
+    @include commonTextStyles($color, $family, $fontSize, $fontWeight);
+}

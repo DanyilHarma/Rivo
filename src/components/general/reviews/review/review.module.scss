@@ -1,0 +1,49 @@
+@use "@styles/variables.scss" as *;
+@use "@styles/mixins.scss" as *;
+
+.reviewWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 250px;
+}
+
+.reviewInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 540px;
+
+    >span {
+        display: inline-block;
+    }
+
+    .companyName {
+        @include h($yellow, $secondFamily, 15px, 700);
+    }
+
+    .customerName {
+        @include h($white, $firstFamily, 32px, 700);
+    }
+
+    p {
+        @include h($textColor, $firstFamily, 17px, 500);
+    }
+}
+
+.reviewContent {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+
+    span {
+        @include h($textColor, $firstFamily, 14px, 400);
+    }
+}

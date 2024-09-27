@@ -1,11 +1,12 @@
+import { forwardRef } from "react";
 import TitleComponent from "../../../general/titleComponent/titleComponent";
 import AboutContent from "./aboutContent/aboutContent";
 import classes from "./aboutPart.module.scss"
 
-const AboutPart = (props) => {
+const AboutPart = forwardRef((props, ref) => {
 
     return (
-        <div className={classes.aboutPartContainer}>
+        <div className={classes.aboutPartContainer} ref={ref}>
             <TitleComponent titleData={props.aboutData.bigTitles} />
             <AboutContent contentData={props.aboutData} />
             {props.aboutData.imagesBackground.map((image, index) => {
@@ -13,6 +14,8 @@ const AboutPart = (props) => {
             })}
         </div>
     )
-}
+})
+
+AboutPart.displayName = "AboutPart";
 
 export default AboutPart;

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import classes from './hoverText.module.scss';
 
-const HoverText = ({ children }) => {
+const HoverText = ({ isFooter = false, children }) => {
     const spanRef = useRef(null);
 
     const handleMouseMove = (e) => {
@@ -23,7 +23,7 @@ const HoverText = ({ children }) => {
     return (
         <span
             ref={spanRef}
-            className={classes.hoverText}
+            className={`${classes.hoverText} ${isFooter ? classes.footerText : ""}`}
             data-text={children}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}

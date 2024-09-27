@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import classes from './navigation.module.scss'
 import data from "./navigationData.json"
-import MakeOrderButton from './makeOrderButton/makeOrderButton';
+import MakeButton from './makeOrderButton/makeOrderButton';
 import MenuButton from './menuButton/menuButton';
 
 const Navigation = () => {
@@ -11,7 +11,7 @@ const Navigation = () => {
                 {data.navigationData.map((item, index) => (
                     <NavLink className={`${classes.headerList} ${item.class ? classes[item.class] : ""}`} to={item.href} key={index}><li>{item.element}</li><img src={item.imgSrc} /></NavLink>
                 ))}
-                <MakeOrderButton />
+                <MakeButton text="MORE ORDER" />
                 <MenuButton />
             </ul>
         </nav >
