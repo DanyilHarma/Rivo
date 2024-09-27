@@ -1,0 +1,35 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.responseContainer {
+    position: relative;
+
+    >img {
+        position: absolute;
+    }
+}
+
+.successMessage,
+.errorMessage {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.errorText,
+.successText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    >span {
+        @include h($white, $firstFamily, 72px, 500);
+    }
+
+    >p {
+        @include h($white, $firstFamily, 20px, 500);
+        text-align: center;
+    }
+}

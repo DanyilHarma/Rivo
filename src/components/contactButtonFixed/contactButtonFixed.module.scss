@@ -1,12 +1,28 @@
-.contactButton {
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.buttonContainer {
     position: fixed;
-    bottom: 5%;
+    bottom: 2%;
     right: 1%;
     z-index: 1000;
     width: 100%;
     max-width: 100px;
     height: 100px;
     border-radius: 100%;
+
+    button {
+        position: absolute;
+        width: 100%;
+        max-width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        transition: transform 1.5s;
+        border: none;
+    }
+}
+
+.contactButton {
     background-color: rgba(255, 255, 255, 0.2);
 
     &::before {
@@ -35,6 +51,32 @@
         background-size: cover;
         background-position: center;
     }
+}
+
+.topButton {
+    background-color: $yellow;
+    inset: 10%;
+    -webkit-box-shadow: 0 0px 32px rgba(182, 182, 182, 0.16);
+    -moz-box-shadow: 0 0px 32px rgba(182, 182, 182, 0.16);
+    box-shadow: 0 0px 32px rgba(182, 182, 182, 0.16);
+
+    &::after {
+        content: url("http://localhost:1338/uploads/Arrow_up_icon_ba1a5f9c8c.png?updatedAt=2024-09-25T13%3A07%3A01.336Z");
+        position: absolute;
+        top: 32%;
+        left: 39%;
+    }
+}
+
+.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hidden {
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
 }
 
 @keyframes spin {

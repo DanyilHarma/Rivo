@@ -1,6 +1,3 @@
-@use "@styles/mixins.scss" as *;
-@use "@styles/variables.scss" as *;
-
 * {
     background-color: #0c0c0c;
 }

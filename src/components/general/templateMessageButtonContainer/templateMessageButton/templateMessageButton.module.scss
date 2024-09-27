@@ -1,0 +1,41 @@
+@use "@styles/variables.scss" as *;
+
+.templateMessageButton {
+    position: fixed;
+    width: 100%;
+    max-width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: $yellow;
+    right: 3.2%;
+    bottom: 15%;
+    z-index: 1000;
+    transition: background-color .2s;
+    animation: fadeIn infinite;
+
+    &::before {
+        content: url("./icons8-letter-20.png");
+        position: absolute;
+        inset: 25%;
+    }
+
+    &:hover::before {
+        content: url("./icons8-letter-20y.png");
+    }
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0);
+        box-shadow: 0 0 0 0 rgba(253, 221, 10, 0);
+    }
+
+    to {
+        transform: scale(1);
+        box-shadow: 0 0 20px 10px rgba(253, 221, 10, 0.3);
+    }
+}

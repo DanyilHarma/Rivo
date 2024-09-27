@@ -1,0 +1,83 @@
+@use "@styles/variables.scss" as *;
+@use "@styles/mixins.scss" as *;
+
+.popupMessageContainer {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.popupMessage {
+    background-color: #121212;
+    position: relative;
+    top: 15%;
+    left: 31%;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    z-index: 1002;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .messageTemplateHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h2 {
+        @include h($white, $secondFamily, 42px, 700)
+    }
+
+
+    .clientInfoContainer {
+        display: flex;
+        justify-content: space-between;
+
+        .clientInfoWrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .clientInfo {
+
+                >span:first-of-type {
+                    @include h($textColor, $secondFamily, 15px, 700);
+                    display: block;
+                }
+
+                >span:last-of-type {
+                    @include h($white, $firstFamily, 20px, 500);
+                }
+            }
+        }
+    }
+
+    .clientMessageContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .clientMessage {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            >span:first-of-type {
+                @include h($textColor, $secondFamily, 15px, 700);
+                display: block;
+            }
+
+            >span:last-of-type {
+                @include h($white, $firstFamily, 20px, 500);
+            }
+        }
+    }
+}

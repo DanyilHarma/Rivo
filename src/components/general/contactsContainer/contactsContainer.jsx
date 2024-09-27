@@ -2,11 +2,16 @@ import TitleComponent from "../titleComponent/titleComponent";
 import Contacts from "./contacts/contacts";
 import classes from "./contactsContainer.module.scss";
 import ContactsInfo from "./contactsInfo/contactsInfo";
+import { useContactVisibility } from "../../../context/contextVisibility.jsx";
+import useVisibilityObserver from "../../../hooks/useVisibilityObserver";
 
 const ContactsContainer = (props) => {
 
+    const { setIsContactVisible, sectionRef } = useContactVisibility();
+
+    useVisibilityObserver(sectionRef, setIsContactVisible, { threshold: 0.5 })
     return (
-        <div className={classes.contactsContainer}>
+        <div className={classes.contactsContainer} ref={sectionRef} >
             <TitleComponent titleData={props.contactsData.bigTitles} />
             <div className={classes.contactsContent}>
                 <Contacts />
@@ -17,7 +22,6 @@ const ContactsContainer = (props) => {
             ))}
         </div>
     );
-
-}
+};
 
 export default ContactsContainer;

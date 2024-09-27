@@ -1,0 +1,30 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.footerContainer {
+    position: relative;
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding-bottom: 20px;
+
+    >img {
+        position: absolute;
+    }
+
+    .footerLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footerPolicy {
+        display: flex;
+        gap: 150px;
+
+        span {
+            @include h(#3f3f3f, $firstFamily, 15px, 500)
+        }
+    }
+}
