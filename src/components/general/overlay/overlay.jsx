@@ -1,4 +1,4 @@
-import ImagesHeader from "../../pages/homepage/header/imagesHeader/imagesHeader";
+import ImagesHeader from "../../pages/mainLayout/homepage/header/imagesHeader/imagesHeader";
 import classes from "./overlay.module.scss"
 
 const Overlay = ({ children, images, isMultiply, backgroundImages }) => {

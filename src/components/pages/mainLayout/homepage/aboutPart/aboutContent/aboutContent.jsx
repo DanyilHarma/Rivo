@@ -1,6 +1,6 @@
 import DOMPurify from "dompurify";
 import classes from "./aboutContent.module.scss"
-import Video from "../../../../general/video/video";
+import Video from "../../../../../general/video/video";
 
 const AboutContent = (props) => {
     return (

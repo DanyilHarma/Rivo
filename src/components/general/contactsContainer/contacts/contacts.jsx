@@ -33,7 +33,6 @@ const Contacts = () => {
             navigate("/response/error")
             console.error("Ошибка при отправке формы:", err);
         }
-        debugger
     };
 
     return (

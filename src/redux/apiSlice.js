@@ -19,9 +19,16 @@ export const apiSlice = createApi({
         }),
         getContactsFormData: builder.query({
             query: () => "contact-form"
+        }),
+        getExpertiseData: builder.query({
+            query: () => "expertises?populate=expertiseData"
+        }),
+        getFooterImagesData: builder.query({
+            query: () => "images-footers?populate=positions"
         })
     }),
 
 })
 
-export const { useGetHomepageDataQuery, useGetProjectsDataQuery, useSendContactsFormMutation, useGetContactsFormDataQuery } = apiSlice;
+export const { useGetHomepageDataQuery, useGetProjectsDataQuery, useSendContactsFormMutation, useGetContactsFormDataQuery, useGetExpertiseDataQuery,
+    useGetFooterImagesDataQuery } = apiSlice;

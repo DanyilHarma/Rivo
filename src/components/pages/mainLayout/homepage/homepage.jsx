@@ -1,9 +1,9 @@
-import { useEffect, useRef } from "react";
-import { useGetHomepageDataQuery } from "../../../redux/apiSlice";
-import BootstrapContainer from "../../general/bootstrapContainer/bootstrapContainer";
-import ContactsContainer from "../../general/contactsContainer/contactsContainer";
-import Overlay from "../../general/overlay/overlay";
-import Reviews from "../../general/reviews/reviews";
+import { useRef } from "react";
+import { useGetHomepageDataQuery } from "../../../../redux/apiSlice";
+import BootstrapContainer from "../../../general/bootstrapContainer/bootstrapContainer";
+import ContactsContainer from "../../../general/contactsContainer/contactsContainer";
+import Overlay from "../../../general/overlay/overlay";
+import Reviews from "../../../general/reviews/reviews";
 import AboutPart from "./aboutPart/aboutPart";
 import HeaderContent from "./header/headerContent/headerContent";
 import IndustryExpertise from "./industryExpertise/industryExpertise";

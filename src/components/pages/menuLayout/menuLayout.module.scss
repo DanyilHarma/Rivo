@@ -1,0 +1,36 @@
+@use "@styles/variables.scss" as *;
+@use "@styles/mixins.scss" as *;
+
+.menuContainer {
+    position: relative;
+    display: flex;
+    padding-top: 70px;
+    gap: 200px;
+
+    .logo {
+        position: absolute;
+        width: fit-content;
+        height: fit-content;
+        top: 50px;
+        left: -13%;
+    }
+
+    .closeButton {
+        @include a($white, $secondFamily, 18px, 700, $yellow);
+        color: #fff;
+        position: absolute;
+        right: -10%;
+        transition: 0.2s;
+
+        &:hover {
+            color: $yellow;
+        }
+
+        &::before {
+            content: url("http://localhost:1338/uploads/Burger_menu_close_icon_ab8961c940.svg?updatedAt=2024-10-01T12%3A58%3A26.478Z");
+            position: absolute;
+            top: 0;
+            left: -35px;
+        }
+    }
+}

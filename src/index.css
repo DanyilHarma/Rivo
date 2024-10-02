@@ -12,6 +12,10 @@ button {
     cursor: url('assets/images/general/icons/Group.png'), auto
 }
 
+img {
+    user-select: none;
+}
+
 h1,
 h2,
 h3,

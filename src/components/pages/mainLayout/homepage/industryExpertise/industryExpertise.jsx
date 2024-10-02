@@ -1,4 +1,4 @@
-import TitleComponent from "../../../general/titleComponent/titleComponent";
+import TitleComponent from "../../../../general/titleComponent/titleComponent";
 import Expertises from "./expertises/expertises";
 
 import classes from "./industryExpertise.module.scss"

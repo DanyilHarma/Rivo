@@ -11,6 +11,7 @@
 
     >img {
         position: absolute;
+        z-index: -1;
     }
 
     .footerLinks {
@@ -25,6 +26,26 @@
 
         span {
             @include h(#3f3f3f, $firstFamily, 15px, 500)
+        }
+    }
+}
+
+.footerContainer.menu {
+    margin-top: 0px;
+
+    a {
+        text-decoration: none;
+    }
+
+    .itemContainer {
+        display: flex;
+        width: 100%;
+        max-width: 610px;
+        flex-wrap: wrap;
+        gap: 13px;
+
+        span {
+            @include a($white, $firstFamily, 18px, 500, $yellow);
         }
     }
 }

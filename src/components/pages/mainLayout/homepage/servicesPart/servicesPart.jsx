@@ -1,4 +1,4 @@
-import TitleComponent from "../../../general/titleComponent/titleComponent";
+import TitleComponent from "../../../../general/titleComponent/titleComponent";
 import Services from "./services/services";
 import classes from "./servicesPart.module.scss"
 

@@ -1,0 +1,32 @@
+@use "@styles/variables.scss" as *;
+
+.iconContainer {
+    display: flex;
+    gap: 20px;
+
+    .iconWrapper {
+        width: 100%;
+        max-width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        background-color: #1a1a1a;
+        text-align: center;
+        transition: background-color .2s;
+
+        &:hover {
+            background-color: $yellow;
+        }
+
+        &:hover .icon svg path {
+            fill: $black;
+        }
+
+        .icon {
+            svg {
+                path {
+                    transition: fill .2s;
+                }
+            }
+        }
+    }
+}

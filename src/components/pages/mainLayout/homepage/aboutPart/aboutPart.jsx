@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import TitleComponent from "../../../general/titleComponent/titleComponent";
+import TitleComponent from "../../../../general/titleComponent/titleComponent";
 import AboutContent from "./aboutContent/aboutContent";
 import classes from "./aboutPart.module.scss"
 

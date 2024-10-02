@@ -1,4 +1,4 @@
-import TitleComponent from "../../../general/titleComponent/titleComponent";
+import TitleComponent from "../../../../general/titleComponent/titleComponent";
 import classes from "./stackPart.module.scss"
 import Stack from "./stack/stack";
 

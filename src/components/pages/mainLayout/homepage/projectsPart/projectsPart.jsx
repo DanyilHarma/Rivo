@@ -1,5 +1,5 @@
 import classes from "./projectsPart.module.scss"
-import TitleComponent from "../../../general/titleComponent/titleComponent";
+import TitleComponent from "../../../../general/titleComponent/titleComponent";
 import Projects from "./projects/projects";
 
 const ProjectsPart = (props) => {

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useGetProjectsDataQuery } from "../../../../../redux/apiSlice";
-import MakeButton from "../../../../header/navigation/makeOrderButton/makeOrderButton";
+import { useGetProjectsDataQuery } from "../../../../../../redux/apiSlice";
+import MakeButton from "../../../../../header/navigation/makeOrderButton/makeOrderButton";
 import classes from "./projects.module.scss"
 import { NavLink } from "react-router-dom";
 

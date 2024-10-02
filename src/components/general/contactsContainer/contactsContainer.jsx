@@ -1,8 +1,8 @@
-import TitleComponent from "../titleComponent/titleComponent";
+import TitleComponent from "../../general/titleComponent/titleComponent";
 import Contacts from "./contacts/contacts";
 import classes from "./contactsContainer.module.scss";
 import ContactsInfo from "./contactsInfo/contactsInfo";
-import { useContactVisibility } from "../../../context/contextVisibility.jsx";
+import { useContactVisibility } from "../../../context/providers/contextVisibility";
 import useVisibilityObserver from "../../../hooks/useVisibilityObserver";
 
 const ContactsContainer = (props) => {
