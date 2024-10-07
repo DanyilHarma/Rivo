@@ -4,7 +4,7 @@ import data from "./navigationData.json"
 import MakeButton from './makeOrderButton/makeOrderButton';
 import MenuButton from './menuButton/menuButton';
 import { useState } from 'react';
-import { useGetExpertiseDataQuery } from '../../../redux/apiSlice';
+import { useGetExpertiseDataQuery } from '../../../redux/requests/apiSlice';
 
 const Navigation = () => {
     const [showExpertiseMenu, setShowExpertiseMenu] = useState(false);

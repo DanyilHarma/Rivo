@@ -13,7 +13,7 @@ const MainLayout = () => {
             <Outlet />
             <TemplateMessageButtonContainer />
             <ContactButtonFixed />
-            <BootstrapContainer>
+            <BootstrapContainer isFooter={true}>
                 <Footer />
             </BootstrapContainer>
         </>

@@ -46,3 +46,7 @@ h6 {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #b6b6b6;
 }
+
+::selection {
+    background-color: #fddd0a
+}

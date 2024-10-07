@@ -6,15 +6,18 @@ import instagram from "./Instagram_icon.svg"
 import twitter from "./Twitter.svg"
 
 
-const icons = [
-    facebook, linkedin, instagram, twitter
-]
 
-const SocietyIcon = () => {
+
+const SocietyIcon = ({ isVacancies = false }) => {
+
+    const selectedIcons =
+        isVacancies ? [facebook, linkedin, instagram]
+            : [facebook, linkedin, instagram, twitter]
+
     return (
-        <div className={classes.iconContainer}>
-            {icons.map((icon, index) => (
-                <div key={index} className={classes.iconWrapper}>
+        <div className={`${isVacancies ? classes.iconContainerHr : classes.iconContainer}`}>
+            {selectedIcons.map((icon, index) => (
+                <div key={index} className={`${isVacancies ? classes.iconWrapperHr : classes.iconWrapperMain}`}>
                     <ReactSVG src={icon} className={classes.icon} />
                 </div>
             ))}

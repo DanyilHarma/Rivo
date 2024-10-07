@@ -1,0 +1,41 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.careerTitlesContainer {
+    display: flex;
+    gap: 200px;
+    align-items: baseline;
+
+    .interestedContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        h3 {
+            @include h($white, $firstFamily, 24px, 600);
+        }
+
+        p {
+            @include h($white, $firstFamily, 16px, 500);
+            width: fit-content;
+            max-width: 510px;
+        }
+    }
+}
+
+.vacanciesContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    h4 {
+        @include h($white, $firstFamily, 32px, 600);
+        margin-bottom: 20px;
+    }
+
+    img {
+        position: absolute;
+        z-index: -1;
+    }
+}

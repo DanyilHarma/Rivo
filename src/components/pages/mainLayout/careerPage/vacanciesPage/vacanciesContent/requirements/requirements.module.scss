@@ -1,0 +1,13 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.requirementsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    h2 {
+        @include h($white, $firstFamily, 32px, 600);
+    }
+
+}

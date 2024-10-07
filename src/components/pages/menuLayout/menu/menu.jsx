@@ -1,4 +1,4 @@
-import { useGetHomepageDataQuery } from "../../../../redux/apiSlice";
+import { useGetHomepageDataQuery } from "../../../../redux/requests/apiSlice";
 import BootstrapContainer from "../../../general/bootstrapContainer/bootstrapContainer";
 import ContactsInfo from "../../../general/contactsContainer/contactsInfo/contactsInfo";
 import classes from "./menu.module.scss"

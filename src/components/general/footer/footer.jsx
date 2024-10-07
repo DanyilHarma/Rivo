@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { useGetFooterImagesDataQuery, useGetHomepageDataQuery } from "../../../redux/apiSlice";
+import { useGetFooterImagesDataQuery, useGetHomepageDataQuery } from "../../../redux/requests/apiSlice";
 import HoverText from "../../pages/mainLayout/homepage/header/headerContent/hoverText/hoverText";
 import classes from "./footer.module.scss";
 
@@ -41,7 +41,7 @@ const Footer = ({ isMenuFooter = false }) => {
             )}
             <div className={classes.footerPolicy}>
                 <span>2020 © Rivo Agency</span>
-                <span>Privacy Policy & Term of Use</span>
+                <NavLink to="/privacy">Privacy Policy & Term of Use</NavLink>
             </div>
         </div>
     );

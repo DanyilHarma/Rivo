@@ -1,0 +1,54 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.backToPrev {
+    @include a($white, $secondFamily, 18px, 700, none);
+    display: flex;
+    gap: 10px;
+    text-transform: uppercase;
+
+    &::before {
+        content: url("http://localhost:1338/uploads/Arrow_icon_55aa488b6b.svg?updatedAt=2024-10-04T09%3A47%3A50.470Z");
+    }
+}
+
+.vacancieHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+
+    .name {
+        @include h($white, $secondFamily, 52px, 700);
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        text-transform: uppercase;
+    }
+
+    .name.hot {
+        &::after {
+            @include h(#000, $firstFamily, 12px, 600);
+            content: "HOT";
+            background-color: $yellow;
+            padding: 1px 4px;
+        }
+    }
+
+    .apply {
+        @include hoverButtonY($yellow, $secondFamily, 17px, 400, $black);
+        gap: 5px;
+
+        svg path {
+            transition: stroke .4s ease;
+        }
+
+        &:hover svg path {
+            stroke: $black;
+        }
+
+        &:hover {
+            background-position: 0 0;
+        }
+    }
+}

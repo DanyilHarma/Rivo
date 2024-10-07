@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useGetHomepageDataQuery } from "../../../../redux/apiSlice";
+import { useGetHomepageDataQuery } from "../../../../redux/requests/apiSlice";
 import BootstrapContainer from "../../../general/bootstrapContainer/bootstrapContainer";
 import ContactsContainer from "../../../general/contactsContainer/contactsContainer";
 import Overlay from "../../../general/overlay/overlay";

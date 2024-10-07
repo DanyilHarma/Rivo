@@ -5,7 +5,7 @@ import { schema } from "./schema";
 import InputField from "./inputField/inputField";
 import MakeButton from "../../../header/navigation/makeOrderButton/makeOrderButton";
 import FileInput from "./fileInput/fileInput";
-import { useSendContactsFormMutation } from "../../../../redux/apiSlice";
+import { useSendContactsFormMutation } from "../../../../redux/requests/apiSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setFormData } from "../../../../redux/reducers/formDataReducer";

@@ -1,0 +1,59 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.vacancies {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    height: 65px;
+    border: 1px solid #212121;
+    padding: 20px 30px;
+    padding-right: 200px;
+    justify-content: space-between;
+
+    .name {
+        @include h($white, $secondFamily, 24px, 400);
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        width: 470px;
+        text-transform: uppercase;
+
+        &::before {
+            @include h(#000, $firstFamily, 12px, 600);
+            content: "MIDDLE";
+            background-color: $white;
+            padding: 1px 4px;
+        }
+    }
+
+    .name.hot {
+        &::after {
+            @include h(#000, $firstFamily, 12px, 600);
+            content: "HOT";
+            background-color: $yellow;
+            padding: 1px 4px;
+        }
+    }
+
+    .salary,
+    .location {
+        @include h($white, $firstFamily, 18px, 500);
+    }
+
+    .detailButton {
+        @include hoverButtonY($yellow, $secondFamily, 16px, 500, $black);
+        position: absolute;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: 0;
+
+        &:hover {
+            background-position: 0 0;
+        }
+    }
+}

@@ -27,6 +27,11 @@
         span {
             @include h(#3f3f3f, $firstFamily, 15px, 500)
         }
+
+        a {
+            @include a(#3f3f3f, $firstFamily, 15px, 500, $yellow);
+            transition: color .3s;
+        }
     }
 }
 

@@ -1,0 +1,13 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.vacanciesImages {
+    display: flex;
+    gap: 20px;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        max-width: 200px;
+    }
+}

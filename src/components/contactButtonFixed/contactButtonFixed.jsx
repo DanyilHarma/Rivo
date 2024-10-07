@@ -6,7 +6,8 @@ const ContactButtonFixed = () => {
     const { isContactVisible, sectionRef } = useContactVisibility();
 
     const location = useLocation()
-    const menuPage = location.pathname === "/menu"
+    const specialPage = ["/menu", "/privacy"];
+    const isSpecialPage = specialPage.includes(location.pathname)
 
     const handleClick = () => {
         if (isContactVisible) {
@@ -21,7 +22,7 @@ const ContactButtonFixed = () => {
 
     return (
         <>
-            {!menuPage && (<div className={classes.buttonContainer}>
+            {!isSpecialPage && (<div className={classes.buttonContainer}>
                 <button className={`${classes.topButton} ${isContactVisible ? classes.visible : classes.hidden} `} onClick={handleClick} style={{ width: "70px", height: "70px" }}> </button>
                 <button className={`${classes.contactButton} ${isContactVisible ? classes.hidden : classes.visible} `} onClick={handleClick}> </button>
             </div>)}

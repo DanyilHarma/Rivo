@@ -1,0 +1,89 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.contactsHr {
+
+    >img {
+        position: absolute;
+        top: 40%;
+        right: -30px;
+        width: 100%;
+        max-width: 660px;
+        z-index: -1;
+    }
+
+    .hrContent {
+        >img {
+            width: 100%;
+            max-width: 540px;
+        }
+
+        .hrInfoContainer {
+            width: 100%;
+            padding: 30px 20px;
+            background-color: $yellow;
+            display: flex;
+            gap: 70px;
+
+            .hrInfoWrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+
+                .hrInfo {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .name {
+                        @include h(#0c0c0c, $secondFamily, 24px, 700);
+                        text-transform: uppercase;
+                    }
+
+                    .position {
+                        @include h(#0c0c0c, $firstFamily, 16px, 500);
+                    }
+
+                }
+
+                .phone {
+                    @include a(#0c0c0c, $firstFamily, 24px, 400, #0c0c0c);
+                }
+
+                .sendButtonWrapper {
+                    width: 100%;
+                    display: flex;
+                    gap: 10px;
+                    max-width: 280px;
+                    height: auto;
+                    border: 1px solid #212121;
+                    padding: 15px 30px;
+                    align-items: center;
+                    transition: background-color .7s;
+
+                    svg path {
+                        transition: fill .7s;
+                    }
+
+                    &:hover {
+                        background-color: $black;
+                    }
+
+                    &:hover svg path {
+                        fill: $white;
+                    }
+
+                    &:hover .sendButton {
+                        color: $white;
+                    }
+
+                    .sendButton {
+                        @include a($black, $secondFamily, 17px, 400, $white);
+                        transition: color .7s;
+                    }
+
+                }
+            }
+        }
+    }
+}
