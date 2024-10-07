@@ -1,0 +1,7 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.vacancieContent {
+    display: flex;
+    gap: 18px;
+}

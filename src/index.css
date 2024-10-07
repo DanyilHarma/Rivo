@@ -12,6 +12,10 @@ button {
     cursor: url('assets/images/general/icons/Group.png'), auto
 }
 
+img {
+    user-select: none;
+}
+
 h1,
 h2,
 h3,
@@ -41,4 +45,8 @@ h6 {
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: #b6b6b6;
+}
+
+::selection {
+    background-color: #fddd0a
 }

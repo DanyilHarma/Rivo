@@ -7,10 +7,13 @@ header {
     z-index: 3;
 }
 
-.logo {
+.logo,
+.homepageLogo {
     position: relative;
     width: fit-content;
+}
 
+.homepageLogo {
     &::before {
         content: "";
         position: absolute;

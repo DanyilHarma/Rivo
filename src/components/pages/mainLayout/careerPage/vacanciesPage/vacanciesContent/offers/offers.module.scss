@@ -1,0 +1,26 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.offersContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    h2 {
+        @include h($white, $firstFamily, 32px, 600);
+    }
+
+    .vacancyInfo {
+        display: flex;
+        gap: 100px;
+
+        h3 {
+            @include h($white, $firstFamily, 16px, 600);
+            margin-bottom: 10px;
+        }
+
+        span {
+            @include h($yellow, $firstFamily, 20px, 600);
+        }
+    }
+}

@@ -1,5 +1,14 @@
 .bootstrapContainer {
     display: flex;
     flex-direction: column;
-    gap: 250px;
+    gap: 200px;
+}
+
+.bootstrapContainer.homepage {
+    gap: 100px;
+}
+
+.bootstrapContainer.mini {
+    gap: 30px;
+    max-width: 900px;
 }

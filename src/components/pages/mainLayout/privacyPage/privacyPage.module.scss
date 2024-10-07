@@ -1,0 +1,78 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.backToPrev {
+    @include a($white, $secondFamily, 18px, 700, none);
+    display: flex;
+    gap: 10px;
+    text-transform: uppercase;
+
+    &::before {
+        content: url("http://localhost:1338/uploads/Arrow_icon_55aa488b6b.svg?updatedAt=2024-10-04T09%3A47%3A50.470Z");
+    }
+}
+
+.privacyContainer {
+    h1 {
+        @include h($white, $firstFamily, 52px, 500);
+        margin-bottom: 50px;
+    }
+
+    h1:last-of-type {
+        margin-top: 60px;
+    }
+}
+
+.sectionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    h2 {
+        @include h($white, $firstFamily, 24px, 500);
+    }
+
+    p {
+        @include h($white, $firstFamily, 18px, 500);
+        margin: 0;
+    }
+
+
+    ul {
+        @include h($white, $firstFamily, 18px, 500);
+        list-style-position: inside;
+        line-height: 150%;
+    }
+
+    .list.depth0.unordered,
+    .list.depth0.ordered {
+        padding: 0;
+
+        ::marker {
+            color: $yellow;
+        }
+    }
+
+    .list.depth1.unordered,
+    .list.depth1.ordered {
+        padding-left: 12px;
+        list-style-type: lower-alpha;
+    }
+
+    .list.depth2.unordered,
+    .list.depth2.ordered {
+        list-style-type: none;
+        padding-left: 1.5rem;
+
+        li {
+            &::before {
+                content: "-";
+                color: $yellow;
+                font-weight: 700;
+                margin-right: 5px;
+            }
+        }
+    }
+
+
+}

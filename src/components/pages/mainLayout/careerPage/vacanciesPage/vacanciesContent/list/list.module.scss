@@ -1,0 +1,24 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.benefites {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+        @include h($white, $firstFamily, 16px, 600);
+    }
+
+    ul {
+        padding-left: 1rem;
+
+        ::marker {
+            color: $yellow;
+        }
+
+        li {
+            @include h($white, $firstFamily, 17px, 500);
+        }
+    }
+}

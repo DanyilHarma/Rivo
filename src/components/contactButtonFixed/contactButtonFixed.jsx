@@ -1,8 +1,13 @@
 import classes from "./contactButtonFixed.module.scss"
-import { useContactVisibility } from "../../context/contextVisibility.jsx";
+import { useContactVisibility } from "../../context/providers/contextVisibility";
+import { useLocation } from "react-router-dom";
 
 const ContactButtonFixed = () => {
     const { isContactVisible, sectionRef } = useContactVisibility();
+
+    const location = useLocation()
+    const specialPage = ["/menu", "/privacy"];
+    const isSpecialPage = specialPage.includes(location.pathname)
 
     const handleClick = () => {
         if (isContactVisible) {
@@ -16,10 +21,12 @@ const ContactButtonFixed = () => {
     }
 
     return (
-        <div className={classes.buttonContainer}>
-            <button className={`${classes.topButton} ${isContactVisible ? classes.visible : classes.hidden} `} onClick={handleClick} style={{ width: "70px", height: "70px" }}> </button>
-            <button to="#contactsSection" className={`${classes.contactButton} ${isContactVisible ? classes.hidden : classes.visible} `} onClick={handleClick}> </button>
-        </div>
+        <>
+            {!isSpecialPage && (<div className={classes.buttonContainer}>
+                <button className={`${classes.topButton} ${isContactVisible ? classes.visible : classes.hidden} `} onClick={handleClick} style={{ width: "70px", height: "70px" }}> </button>
+                <button className={`${classes.contactButton} ${isContactVisible ? classes.hidden : classes.visible} `} onClick={handleClick}> </button>
+            </div>)}
+        </>
     )
 }
 

@@ -1,29 +1,32 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import Header from "./components/header/header.jsx"
-import Homepage from "./components/pages/homepage/homepage.jsx"
-import ContactButtonFixed from "./components/contactButtonFixed/contactButtonFixed.jsx"
-import { ContactVisibilityProvider } from "./context/contextVisibility.jsx"
-import Footer from "./components/general/footer/footer.jsx"
-import BootstrapContainer from "./components/general/bootstrapContainer/bootstrapContainer.jsx"
+import Homepage from "./components/pages/mainLayout/homepage/homepage.jsx"
 import ContactFormResponse from "./components/general/contactFormResponse/contactFormResponse.jsx"
-import TemplateMessageButtonContainer from "./components/general/templateMessageButtonContainer/templateMessageButtonContainer.jsx"
+import Menu from "./components/pages/menuLayout/menu/menu.jsx"
+import MainLayout from "./components/pages/mainLayout/mainLayout.jsx"
+import MenuLayout from "./components/pages/menuLayout/menuLayout.jsx"
+import CareerPage from "./components/pages/mainLayout/careerPage/careerPage.jsx"
+import ScrollToTop from "./components/scrollToTop/scrollToTop.jsx"
+import VacanciesPage from "./components/pages/mainLayout/careerPage/vacanciesPage/vacanciesPage.jsx"
+import PrivacyPage from "./components/pages/mainLayout/privacyPage/privacyPage.jsx"
 
 function App() {
   return (
     <div className="app">
-      <ContactVisibilityProvider>
-        <Header />
+      <ScrollToTop>
         <Routes>
-          <Route path="/" element={<Navigate to="homepage" />} />
-          <Route path="homepage" element={<Homepage />} />
-          <Route path="/response/:type" element={<ContactFormResponse />} />
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Navigate to="homepage" />} />
+            <Route path="homepage" element={<Homepage />} />
+            <Route path="/response/:type" element={<ContactFormResponse />} />
+            <Route path="/career" element={<CareerPage />} />
+            <Route path="/career/:id" element={<VacanciesPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+          </Route>
+          <Route element={<MenuLayout />}>
+            <Route path="/menu" element={<Menu />} />
+          </Route>
         </Routes>
-        <TemplateMessageButtonContainer />
-        <ContactButtonFixed />
-        <BootstrapContainer>
-          <Footer />
-        </BootstrapContainer>
-      </ContactVisibilityProvider>
+      </ScrollToTop>
     </div >
   )
 }

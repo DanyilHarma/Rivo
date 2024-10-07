@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import BootstrapContainer from "../bootstrapContainer/bootstrapContainer";
 import classes from "./contactFormResponse.module.scss"
-import { useGetContactsFormDataQuery } from "../../../redux/apiSlice";
+import { useGetContactsFormDataQuery } from "../../../redux/requests/apiSlice";
 import { useEffect } from "react";
 
 const ContactFormResponse = (props) => {

@@ -1,29 +1,50 @@
-import { NavLink } from "react-router-dom";
-import { useGetHomepageDataQuery } from "../../../redux/apiSlice";
-import HoverText from "../../pages/homepage/header/headerContent/hoverText/hoverText";
+import { NavLink, useLocation } from "react-router-dom";
+import { useGetFooterImagesDataQuery, useGetHomepageDataQuery } from "../../../redux/requests/apiSlice";
+import HoverText from "../../pages/mainLayout/homepage/header/headerContent/hoverText/hoverText";
 import classes from "./footer.module.scss";
 
-const Footer = () => {
+
+const Footer = ({ isMenuFooter = false }) => {
     const { data: footerData, error, isLoading } = useGetHomepageDataQuery();
-    if (isLoading) return <p>Загрузка...</p>;
-    if (error) return <p>Ошибка при загрузке данных!</p>;
+    const { data: footerImagesData, error1, isLoading2 } = useGetFooterImagesDataQuery();
+
+    const location = useLocation();
+    const currentPage = location.pathname === "/menu" ? "menu" : "default"
+
+
+    if (isLoading || isLoading2) return <p>Загрузка...</p>;
+    if (error || error1) return <p>Ошибка при загрузке данных!</p>;
 
     return (
-        <div className={classes.footerContainer}>
+        <div className={`${classes.footerContainer} ${isMenuFooter ? classes.menu : ""} ${isMenuFooter ? classes.menuCustom : ""}`}>
             <div className={classes.footerLinks}>
-                {footerData?.data?.attributes?.footerData.footerNames.map((name, index) => {
-                    return (<NavLink key={index}><HoverText isFooter={true}>{name.name}</HoverText></NavLink>)
-                })}
+                {footerData?.data?.attributes?.footerData.footerNames.map((name, index) => (
+                    <NavLink to={name.link} key={index}>
+                        <HoverText isFooter={true}>{name.name}</HoverText>
+                        {location.pathname === "/menu" && (name.expertises && (<div className={classes.itemContainer}>{name.expertises.map((item, index) => <span key={index}>{item}</span>)}</div>))}
+                    </NavLink>
+                ))}
             </div>
-            {footerData?.data?.attributes?.footerData.imagesBackground.map((image, index) => {
-                return (<img key={index} src={image.imgSrc} style={{ top: image.top, left: image.left, right: image.right, width: image.width, maxWidth: image.maxWidth }} />)
-            })}
+            {footerImagesData?.data.map(imagesData => {
+                const image = imagesData.attributes;
+                const positionData = image.positions.find(pos => pos.name === currentPage) || {};
+                return (
+                    <img key={imagesData.id} src={image.imgSrc} style={{
+                        top: positionData.top,
+                        left: positionData.left,
+                        right: positionData.right,
+                        width: positionData.width,
+                        maxWidth: positionData.maxWidth,
+                    }} />
+                )
+            }
+            )}
             <div className={classes.footerPolicy}>
                 <span>2020 © Rivo Agency</span>
-                <span>Privacy Policy & Term of Use</span>
+                <NavLink to="/privacy">Privacy Policy & Term of Use</NavLink>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Footer;

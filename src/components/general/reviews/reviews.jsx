@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useGetProjectsDataQuery } from "../../../redux/apiSlice";
-import TitleComponent from "../titleComponent/titleComponent";
+import { useGetProjectsDataQuery } from "../../../redux/requests/apiSlice";
+import TitleComponent from "../../general/titleComponent/titleComponent";
 import Review from "./review/review";
 import classes from "./reviews.module.scss";
 import ProgressCircles from "./progressCircles/progressCircles";
