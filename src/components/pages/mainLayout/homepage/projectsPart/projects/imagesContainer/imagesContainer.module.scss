@@ -1,0 +1,124 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.projectContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.project {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+
+    >span {
+        @include h($white, $firstFamily, 32px, 500);
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+    }
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    max-height: 350px;
+}
+
+.imageWrapper {
+    position: relative;
+
+    a {
+        @include a($yellow, $secondFamily, 17px, 400, $yellow)
+    }
+
+    .projectImage {
+        width: 1040px;
+        height: 100%;
+        max-height: 350px;
+        object-fit: cover;
+        object-position: top;
+        transition: box-shadow 0.3s ease;
+        z-index: 2;
+    }
+
+    .full {
+        width: 100%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0);
+        transition: background-color 0.3s ease;
+        z-index: 3;
+        pointer-events: none;
+    }
+
+    &:hover .projectImage {
+        box-shadow: -2px 2px 0px 0 $yellow;
+    }
+
+    &:hover::before {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .viewProject {
+        position: absolute;
+        z-index: 4;
+        inset: 50% 45%;
+        white-space: nowrap;
+
+        >span {
+            @include h($yellow, $secondFamily, 17px, 400);
+        }
+
+        >img {
+            width: 100%;
+            max-width: 13px;
+            height: 13px;
+            transition: transform .2s;
+            transform: rotate(45deg);
+            margin-bottom: 5px;
+            margin-left: 5px;
+            animation: swing .5s ease forwards;
+        }
+    }
+}
+
+@keyframes swing {
+    0% {
+        margin-left: 3px;
+    }
+
+    25% {
+        margin-left: 5px;
+    }
+
+    50% {
+        margin-left: 7px;
+    }
+
+    75% {
+        margin-left: 3px;
+    }
+
+    100% {
+        margin-left: 5px;
+    }
+}
+
+
+.showMoreButtonWrapper {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

@@ -1,0 +1,53 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.projectCardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h2 {
+        @include h($white, $firstFamily, 32px, 500);
+        margin-bottom: 10px;
+    }
+
+    .projectCardInfoContainer {
+        display: flex;
+        gap: 200px;
+
+        >p {
+            @include h($textColor, $firstFamily, 16px, 500);
+            width: 100%;
+            max-width: 500px;
+            min-height: 70px;
+        }
+
+        .projectCardInfo {
+            display: flex;
+            gap: 100px;
+
+            >div h6 {
+                @include h($textColor, $firstFamily, 16px, 400);
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+
+            >div span {
+                @include h($white, $firstFamily, 24px, 500);
+                text-transform: uppercase;
+                display: flex;
+                gap: 15px;
+
+                &::before {
+                    content: url("http://localhost:1338/uploads/Clock_icon_a1b976ba0a.svg?updatedAt=2024-10-10T11%3A01%3A15.163Z");
+                }
+            }
+
+            .technologiesContainer {
+                display: flex;
+                min-height: 36px;
+                gap: 20px;
+            }
+        }
+    }
+}

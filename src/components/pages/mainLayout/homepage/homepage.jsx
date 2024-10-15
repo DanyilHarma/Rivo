@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useGetHomepageDataQuery } from "../../../../redux/requests/apiSlice";
+import { useGetExpertiseDataQuery, useGetHomepageDataQuery } from "../../../../redux/requests/apiSlice";
 import BootstrapContainer from "../../../general/bootstrapContainer/bootstrapContainer";
 import ContactsContainer from "../../../general/contactsContainer/contactsContainer";
 import Overlay from "../../../general/overlay/overlay";
@@ -14,10 +14,10 @@ import StackPart from "./stackPart/stackPart";
 const Homepage = () => {
 
     const aboutRef = useRef();
-
+    const { data: categoryData, error1, isLoading1 } = useGetExpertiseDataQuery();
     const { data: homepageData, error, isLoading } = useGetHomepageDataQuery();
-    if (isLoading) return <p>Загрузка...</p>;
-    if (error) return <p>Ошибка при загрузке данных!</p>;
+    if (isLoading || isLoading1) return <p>Загрузка...</p>;
+    if (error || error1) return <p>Ошибка при загрузке данных!</p>;
 
     return (
         <>
@@ -27,7 +27,7 @@ const Homepage = () => {
             <BootstrapContainer>
                 <AboutPart aboutData={homepageData?.data?.attributes?.aboutData} ref={aboutRef} />
                 <ServicesPart servicesData={homepageData?.data?.attributes?.servicesData} />
-                <IndustryExpertise industryExpertiseData={homepageData?.data?.attributes?.industryExpertise} />
+                <IndustryExpertise industryExpertiseData={homepageData?.data?.attributes?.industryExpertise} categories={categoryData?.data} />
                 <StackPart stackData={homepageData?.data?.attributes?.stackData} />
                 <ProjectsPart projectsData={homepageData?.data?.attributes?.projectsTitle} />
                 <Reviews reviewsData={homepageData?.data?.attributes?.reviewsHomepageData} />

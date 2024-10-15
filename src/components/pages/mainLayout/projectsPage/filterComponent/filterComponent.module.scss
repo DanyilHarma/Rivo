@@ -1,0 +1,33 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.filterContainer {
+    display: flex;
+    gap: 15px;
+
+    button {
+        @include h($textColor, $secondFamily, 14px, 700);
+        text-transform: uppercase;
+        border: none;
+        background-color: transparent;
+        display: flex;
+        align-items: flex-start;
+        gap: 5px;
+
+        &:hover {
+            color: $yellow;
+        }
+
+        &:hover svg path {
+            stroke: $yellow;
+        }
+    }
+
+    .active {
+        @include h($yellow, $secondFamily, 14px, 700);
+
+        svg path {
+            stroke: $yellow;
+        }
+    }
+}

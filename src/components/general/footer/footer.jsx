@@ -10,13 +10,14 @@ const Footer = ({ isMenuFooter = false }) => {
 
     const location = useLocation();
     const currentPage = location.pathname === "/menu" ? "menu" : "default"
+    const privacyPage = location.pathname === "/privacy";
 
 
     if (isLoading || isLoading2) return <p>Загрузка...</p>;
     if (error || error1) return <p>Ошибка при загрузке данных!</p>;
 
     return (
-        <div className={`${classes.footerContainer} ${isMenuFooter ? classes.menu : ""} ${isMenuFooter ? classes.menuCustom : ""}`}>
+        <div className={`${classes.footerContainer} ${isMenuFooter ? classes.menu : ""} ${privacyPage ? classes.privacyFooter : ""}`}>
             <div className={classes.footerLinks}>
                 {footerData?.data?.attributes?.footerData.footerNames.map((name, index) => (
                     <NavLink to={name.link} key={index}>

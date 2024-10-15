@@ -6,7 +6,7 @@ export const apiSlicePolicy = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:1338/api/" }),
     endpoints: (builder) => ({
         getPolicyData: builder.query({
-            query: () => "privacy-policy-datas?populate=sections"
+            query: () => "privacy-policy-datas?populate=*"
         })
     }),
 })

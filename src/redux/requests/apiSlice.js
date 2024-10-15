@@ -5,7 +5,7 @@ export const apiSlice = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:1338/api/" }),
     endpoints: (builder) => ({
         getHomepageData: builder.query({
-            query: () => "about-data"
+            query: () => "about-data?populate=categories"
         }),
         getProjectsData: builder.query({
             query: () => "about-data?populate[rivo_projects][populate]=projectsData"

@@ -1,0 +1,19 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.backToPrev {
+    @include a($white, $secondFamily, 18px, 700, none);
+    display: flex;
+    gap: 10px;
+    text-transform: uppercase;
+
+    &::before {
+        content: url("http://localhost:1338/uploads/Arrow_icon_55aa488b6b.svg?updatedAt=2024-10-04T09%3A47%3A50.470Z");
+    }
+}
+
+
+.projectHeaderInfoContainer {
+    display: flex;
+    gap: 50px;
+}

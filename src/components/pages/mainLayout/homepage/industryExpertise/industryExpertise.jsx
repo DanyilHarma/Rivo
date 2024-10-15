@@ -8,7 +8,7 @@ const IndustryExpertise = (props) => {
     return (
         <div className={classes.industryExpertiseContainer}>
             <TitleComponent titleData={props.industryExpertiseData.bigTitles} />
-            <Expertises expertiseData={props.industryExpertiseData.expertises} />
+            <Expertises categories={props.categories} />
             <img src={props.industryExpertiseData.backgroundImage} alt="" />
         </div>
     )

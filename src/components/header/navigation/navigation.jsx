@@ -22,7 +22,8 @@ const Navigation = () => {
                         {item.element === 'Expertise' ? (
                             <div onClick={handleExpertiseClick} className={classes.dropdownTrigger}>
                                 <span>{item.element}</span>
-                                {item.imgSrc && <img src={item.imgSrc} alt={item.element} />}
+                                {item.imgSrc && <img src={item.imgSrc} alt={item.element} className={`${classes.arrow}
+                                    ${showExpertiseMenu ? classes.rotate : ""}`} />}
 
                             </div>
                         ) : (
