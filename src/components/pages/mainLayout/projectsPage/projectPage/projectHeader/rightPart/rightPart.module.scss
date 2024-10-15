@@ -1,0 +1,53 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+
+
+
+.projectHeaderInfo {
+    .logo {
+        margin-bottom: 30px;
+        height: 50px;
+    }
+
+    .inner {
+        display: flex;
+        gap: 50px;
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            .group {
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+
+                .label {
+                    @include h($textColor, $secondFamily, 16px, 700);
+                    text-transform: uppercase;
+                }
+
+                .value {
+                    @include h($white, $firstFamily, 24px, 500);
+
+                    img {
+                        margin-right: 10px;
+                    }
+                }
+
+                .starsWrapper {
+                    display: flex;
+                    gap: 10px;
+
+                    .stars {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

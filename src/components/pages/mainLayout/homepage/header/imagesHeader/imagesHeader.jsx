@@ -10,8 +10,6 @@ const ImagesHeader = (props) => {
                 ? classes.thirdCol
                 : "";
 
-
-
     return (
         <div className={classNames}>
             {props.col.map((item, index) => (

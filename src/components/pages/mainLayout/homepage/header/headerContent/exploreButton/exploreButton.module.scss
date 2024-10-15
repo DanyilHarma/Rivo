@@ -1,20 +1,43 @@
-.exploreButton {
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
-    max-width: 53px;
-    height: 53px;
-    background-color: transparent;
-    outline: 1px solid #fff;
-    border-radius: 100%;
-    transition: background-color .2s ease;
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
 
-    &:hover {
+
+.exploreButtonContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &:hover .exploreButton {
         background-color: rgba(255, 255, 255, 0.2);
         outline: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    svg {
-        margin-top: 10px;
+    &:hover span {
+        color: rgba(255, 255, 255, 0.2);
+    }
+
+    .exploreButton {
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        max-width: 53px;
+        height: 53px;
+        background-color: transparent;
+        outline: 1px solid #fff;
+        border-radius: 100%;
+        transition: background-color .2s ease;
+
+        svg {
+            margin-top: 10px;
+        }
+    }
+
+    .project {
+        margin: 0;
+    }
+
+    span {
+        @include h($white, $firstFamily, 18px, 500);
+        transition: color .2s ease;
     }
 }

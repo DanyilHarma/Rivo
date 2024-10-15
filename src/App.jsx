@@ -4,10 +4,10 @@ import ContactFormResponse from "./components/general/contactFormResponse/contac
 import Menu from "./components/pages/menuLayout/menu/menu.jsx"
 import MainLayout from "./components/pages/mainLayout/mainLayout.jsx"
 import MenuLayout from "./components/pages/menuLayout/menuLayout.jsx"
-import CareerPage from "./components/pages/mainLayout/careerPage/careerPage.jsx"
 import ScrollToTop from "./components/scrollToTop/scrollToTop.jsx"
-import VacanciesPage from "./components/pages/mainLayout/careerPage/vacanciesPage/vacanciesPage.jsx"
 import PrivacyPage from "./components/pages/mainLayout/privacyPage/privacyPage.jsx"
+import CareerRoutes from "./components/pages/mainLayout/careerPage/careerRoutes/careerRoutes.jsx"
+import ProjectsRoutes from "./components/pages/mainLayout/projectsPage/projectRoutes/projectsRoutes.jsx"
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
             <Route path="/" element={<Navigate to="homepage" />} />
             <Route path="homepage" element={<Homepage />} />
             <Route path="/response/:type" element={<ContactFormResponse />} />
-            <Route path="/career" element={<CareerPage />} />
-            <Route path="/career/:id" element={<VacanciesPage />} />
+            <Route path="/career/*" element={<CareerRoutes />} />
+            <Route path="/projects/*" element={<ProjectsRoutes />} />
             <Route path="/privacy" element={<PrivacyPage />} />
           </Route>
           <Route element={<MenuLayout />}>
@@ -31,4 +31,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

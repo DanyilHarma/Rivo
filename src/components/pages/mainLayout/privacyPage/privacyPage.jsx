@@ -15,14 +15,16 @@ const PrivacyPage = () => {
         <BootstrapContainer>
             <NavLink to="/homepage" className={classes.backToPrev}>Back to home page</NavLink>
             <div className={classes.privacyContainer}>
-                {privacyData?.data?.map(document => (
-                    <div key={document.id}>
-                        <h1>{document.attributes.title}</h1>
-                        {document.attributes.sections.map(section => (
-                            <div key={section.id} className={classes.sectionContainer}>
-                                <PrivacyContent content={section.content} />
-                            </div>
-                        ))}
+                {privacyData?.data?.map((paper, index) => (
+                    <div key={paper.attributes.slug}>
+                        <h1>{paper.attributes.title}</h1>
+                        <div key={index} className={classes.sectionContainer}>
+                            {paper.attributes?.privacySections?.sections.map(section => (
+                                <>
+                                    <PrivacyContent content={section} />
+                                </>
+                            ))}
+                        </div>
                     </div>
                 ))}
             </div>
