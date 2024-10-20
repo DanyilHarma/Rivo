@@ -4,7 +4,7 @@ import classes from "./projectPage.module.scss";
 import { useGetProjectsDataQuery } from "../../../../../redux/requests/apiSliceProjects";
 import Overlay from "../../../../general/overlay/overlay";
 import ProjectHeader from "./projectHeader/projectHeader";
-import ProjectNav from "./projectNav/projectNav";
+import ProjectContent from "./projectContent/projectContent";
 
 const ProjectPage = () => {
     const { data: projectsData, error, isLoading } = useGetProjectsDataQuery();
@@ -17,14 +17,16 @@ const ProjectPage = () => {
 
     if (isLoading) return <p>Загрузка...</p>;
     if (error) return <p>Ошибка при загрузке данных!</p>;
+
     return (
         <>
             <Overlay isMultiply={false} projectImage={selectedProject.headerImage}>
                 <ProjectHeader headerProjectData={selectedProject} />
             </Overlay>
-            <BootstrapContainer>
-                <ProjectNav sections={selectedProject.sections} />
-            </BootstrapContainer>
+
+            <div className="container" style={{ position: "relative", height: "100%" }}>
+                <ProjectContent sections={selectedProject.sections} />
+            </div>
         </>
     )
 }

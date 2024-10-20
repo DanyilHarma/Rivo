@@ -1,0 +1,7 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.projectContentContainer {
+    display: flex;
+    gap: 150px;
+}
