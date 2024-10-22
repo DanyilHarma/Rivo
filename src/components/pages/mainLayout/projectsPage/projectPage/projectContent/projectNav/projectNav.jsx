@@ -1,21 +1,19 @@
-import { NavLink } from "react-router-dom";
 import classes from "./projectNav.module.scss";
 
-
-const ProjectNav = ({ sections }) => {
+const ProjectNav = ({ sections, activeSectionIndices }) => {
 
     return (
         <aside >
             <div className={classes.aside}>
                 <nav>
                     <ul>
-                        {sections.map(section => (
-                            <li key={section.id}>
-                                <NavLink to={section.anchor}>
+                        {sections.map((section, index) =>
+                            section.title && (<li key={section.id}>
+                                <a href={`#${section.anchor}`} className={`${activeSectionIndices.includes(index) ? classes.active : ""}`}>
                                     {section.title}
-                                </NavLink>
-                            </li>
-                        ))}
+                                </a>
+                            </li>)
+                        )}
                     </ul>
                 </nav>
             </div>

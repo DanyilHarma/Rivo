@@ -14,6 +14,7 @@ const LeftPart = ({ headerProjectData }) => {
                         <img src={item.imgSrc} alt={item.name} />
                         <span>{item.name}</span>
                     </div>
+
                 )}
             </div>
         </div>

@@ -3,6 +3,7 @@ import classes from "./headerContent.module.scss"
 import HoverText from "./hoverText/hoverText"
 
 const HeaderContent = ({ aboutRef }) => {
+
     return (
         <>
             <span className={classes.yellowText}>We are Rivo Agency </span>

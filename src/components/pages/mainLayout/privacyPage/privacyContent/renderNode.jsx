@@ -27,6 +27,12 @@ export const renderNode = (node, index, depth = 0) => {
             return (
                 <li className={`list-item depth-${depth}`} key={index}>{node.children && node.children.map((child, i) => renderNode(child, i, depth))}</li>
             );
+        case "image":
+            return (
+                <div>
+                    <img src={node.image.url} alt="" />
+                </div>
+            );
         case "text":
             return (
                 node.text

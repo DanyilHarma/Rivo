@@ -16,7 +16,9 @@
 
     .stackList {
         display: flex;
+        flex-wrap: wrap;
         gap: 50px;
+        margin-bottom: -70px;
 
         .item {
             text-align: center;

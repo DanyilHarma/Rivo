@@ -5,7 +5,8 @@ import ExploreButton from "../../../homepage/header/headerContent/exploreButton/
 import LeftPart from "./leftPart/leftPart";
 import RightPart from "./rightPart/rightPart";
 
-const ProjectHeader = ({ headerProjectData }) => {
+const ProjectHeader = ({ headerProjectData, aboutRef }) => {
+
     return (
         <BootstrapContainer>
             <NavLink to="/projects" className={classes.backToPrev}>back to cases</NavLink>
@@ -13,7 +14,7 @@ const ProjectHeader = ({ headerProjectData }) => {
                 <LeftPart headerProjectData={headerProjectData} />
                 <RightPart headerProjectData={headerProjectData} />
             </div>
-            <ExploreButton aboutRef={headerProjectData.aboutRef} isProject={true} />
+            <ExploreButton aboutRef={aboutRef} isProject={true} />
         </BootstrapContainer>
     )
 }

@@ -2,7 +2,8 @@
 @use "@styles/variables.scss" as *;
 
 aside {
-    height: 300vh;
+    height: 94%;
+    position: absolute;
 
     .aside {
         position: sticky;
@@ -10,6 +11,7 @@ aside {
         left: 0;
         width: 340px;
         align-self: flex-start;
+
 
         nav {
             ul {
@@ -20,14 +22,25 @@ aside {
                 li {
                     padding: 10px;
                     line-height: 160%;
+                    text-transform: uppercase;
+
+                    a {
+                        @include a($white, $secondFamily, 24px, 700, $yellow);
+
+                        &.active {
+                            display: flex;
+                            gap: 5px;
+
+                            &::before {
+                                content: url("./Arrow_icon.svg");
+
+                            }
+                        }
+                    }
                 }
             }
 
-            a {
-                @include a($white, $secondFamily, 24px, 700, $yellow);
-            }
+
         }
-
-
     }
 }

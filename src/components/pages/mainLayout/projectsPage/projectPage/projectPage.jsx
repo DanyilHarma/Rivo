@@ -1,14 +1,18 @@
 import { useParams } from "react-router-dom";
-import BootstrapContainer from "../../../../general/bootstrapContainer/bootstrapContainer";
 import classes from "./projectPage.module.scss";
 import { useGetProjectsDataQuery } from "../../../../../redux/requests/apiSliceProjects";
 import Overlay from "../../../../general/overlay/overlay";
 import ProjectHeader from "./projectHeader/projectHeader";
 import ProjectContent from "./projectContent/projectContent";
+import { useRef } from "react";
 
 const ProjectPage = () => {
     const { data: projectsData, error, isLoading } = useGetProjectsDataQuery();
     const { id } = useParams();
+    const refs = {
+        sectionRef: useRef(null),
+    };
+
 
     const projectDataContent = projectsData?.data[0] || [];
     const projects = projectDataContent?.attributes?.projectsData || [];
@@ -21,11 +25,11 @@ const ProjectPage = () => {
     return (
         <>
             <Overlay isMultiply={false} projectImage={selectedProject.headerImage}>
-                <ProjectHeader headerProjectData={selectedProject} />
+                <ProjectHeader headerProjectData={selectedProject} aboutRef={refs.sectionRef} />
             </Overlay>
 
             <div className="container" style={{ position: "relative", height: "100%" }}>
-                <ProjectContent sections={selectedProject.sections} />
+                <ProjectContent sections={selectedProject.sections} sectionRef={refs.sectionRef} />
             </div>
         </>
     )
