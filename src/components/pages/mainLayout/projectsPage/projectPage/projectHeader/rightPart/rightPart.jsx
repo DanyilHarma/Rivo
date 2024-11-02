@@ -11,7 +11,7 @@ const RightPart = ({ headerProjectData }) => {
         [
             { label: "clutch review", value: headerProjectData.clutchReview, stars: headerProjectData.clutchReview },
             { label: "location", value: headerProjectData.location },
-            { label: "MVP Development time", value: headerProjectData.developTime, clock: "http://localhost:1338/uploads/Clock_icon_a1b976ba0a.svg?updatedAt=2024-10-10T11%3A01%3A15.163Z" }
+            { label: "MVP Development time", value: headerProjectData.developTime + " HOURS", clock: "http://localhost:1338/uploads/Clock_icon_a1b976ba0a.svg?updatedAt=2024-10-10T11%3A01%3A15.163Z" }
         ]
     ]
 
@@ -27,7 +27,7 @@ const RightPart = ({ headerProjectData }) => {
                                     <>
                                         <span className={classes.label}>{details.label}</span>
                                         <div className={classes.starsWrapper}>
-                                            <span className={classes.value}>{details.value + ".0"}</span>
+                                            <span className={classes.value}>{details.value}</span>
                                             <div className={classes.stars}>
                                                 {Array.from({ length: details.stars }).map((_, i) =>
                                                     <img key={i} src="http://localhost:1338/uploads/Star_1_55527824ee.svg?updatedAt=2024-10-14T09%3A29%3A49.159Z"

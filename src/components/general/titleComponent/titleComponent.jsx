@@ -1,11 +1,11 @@
 import classes from "./titleComponent.module.scss"
 
-const TitleComponent = (props) => {
+const TitleComponent = ({ titleData, isProjectPage = false }) => {
 
     return (
-        <div className={classes.titleContainer}>
-            <h2 className={classes.title}>{props.titleData.bigTitle}</h2>
-            <span className={classes.titleTransparent}>{props.titleData.bigTitleTransparent}</span>
+        <div className={`${classes.titleContainer}${isProjectPage ? classes.isProjectPage : ""}`}>
+            <h2 className={classes.title}>{titleData?.bigTitle}</h2>
+            <span className={classes.titleTransparent}>{titleData?.bigTitleTransparent}</span>
         </div>
     )
 }

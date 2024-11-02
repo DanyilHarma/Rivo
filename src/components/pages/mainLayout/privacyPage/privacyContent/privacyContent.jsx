@@ -1,4 +1,4 @@
-import { renderNode } from "./renderNode";
+import { renderNode } from "../../../../../utils/rendererNodes/renderNode";
 import React from "react";
 
 const PrivacyContent = React.memo(({ content }) => {

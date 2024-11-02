@@ -2,7 +2,7 @@ import classes from "./leftPart.module.scss";
 
 const LeftPart = ({ headerProjectData }) => {
 
-    const stackItem = headerProjectData.stack[0].stack || [];
+    const stackItem = headerProjectData?.Content[1]?.stack || [];
 
     return (
         <div className={classes.projectHeaderInfo}>

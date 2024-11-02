@@ -7,6 +7,7 @@ import useVisibilityObserver from "../../../hooks/useVisibilityObserver";
 import ContactsHr from "./contactsHr/contactsHr";
 
 const ContactsContainer = ({ contactsData, isVacancies = false }) => {
+
     const { setIsContactVisible, sectionRef } = useContactVisibility();
     const { bigTitles, contactsInfo, imagesBackground } = contactsData || {};
     useVisibilityObserver(sectionRef, setIsContactVisible, { threshold: 0.5 });

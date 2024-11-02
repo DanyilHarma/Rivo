@@ -1,6 +1,7 @@
 import mergeRefs from "../../../../../../../utils/mergeRefs";
-import { renderNode } from "../../../../privacyPage/privacyContent/renderNode";
 import classes from "./projectArticles.module.scss";
+import MediaSection from "./mediaSection/mediaSection";
+import TextSection from "./textSection/textSection";
 
 const ProjectArticles = ({ articles, sectionRef, sectionRefs }) => {
 
@@ -11,16 +12,19 @@ const ProjectArticles = ({ articles, sectionRef, sectionRefs }) => {
 
     return (
         <article className={classes.projectArticle}>
-            {articles.map((article, index) => (
-                <section key={article.id} id={article.anchor} className={`${classes.section} ${!article.title ? classes.image : ""}`}
-                    ref={mergeRefs(...refs[index])}>
-                    {article.title && (<h2>{article.title}</h2>)}
-                    {Array.isArray(article.content)
-                        ? article.content.map((node, index) => renderNode(node, index))
-                        : renderNode(article.content)
-                    }
-                </section>
-            ))}
+            {articles.map((article, index) => {
+                const ref = mergeRefs(...refs[index]);
+                switch (article.__component) {
+                    case "projects-data.text-section":
+                        return (
+                            <TextSection key={index} id={article.id} anchor={article.anchor} article={article} articleRef={ref} />
+                        )
+                    case "projects-data.video":
+                        return (
+                            <MediaSection key={index} media={article} />
+                        )
+                }
+            })}
         </article>
     )
 }

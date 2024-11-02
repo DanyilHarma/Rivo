@@ -5,12 +5,13 @@ import FilterComponent from "./filterComponent/filterComponent";
 import ProjectCard from "./projectCard/projectCard";
 import useFilteredProjects from "../../../../hooks/useFilteredProjects";
 import { useCallback } from "react";
+import { useGetHomepageDataQuery } from "../../../../redux/requests/apiSlice";
 
 const ProjectsPage = () => {
     const { data: projectsData, error, isLoading } = useGetProjectsDataQuery();
+    const { data: projectsTitle, error1, isLoading2 } = useGetHomepageDataQuery();
 
-    const projectDataContent = projectsData?.data[0] || [];
-    const projects = projectDataContent?.attributes?.projectsData || [];
+    const projects = projectsData?.data || [];
 
     const { categories, filteredProjects, selectedCategory, setSelectedCategory } = useFilteredProjects(projects);
 
@@ -18,15 +19,19 @@ const ProjectsPage = () => {
         setSelectedCategory(category);
     }, [])
 
-    if (isLoading) return <p>Загрузка...</p>;
-    if (error) return <p>Ошибка при загрузке данных!</p>;
+
+
+    const titleData = projectsTitle?.data?.attributes.projectsTitle.bigTitles;
+
+    if (isLoading || isLoading2) return <p>Загрузка...</p>;
+    if (error || error1) return <p>Ошибка при загрузке данных!</p>;
 
     return (
         <BootstrapContainer>
-            <TitleComponent titleData={projectDataContent?.attributes.titles.bigTitles} />
+            <TitleComponent titleData={titleData} isProjectPage={true} />
             <FilterComponent categories={categories} onFilterChange={handleCategoryClick} selectedCategory={selectedCategory} />
             {filteredProjects.map((project, index) => {
-                return <ProjectCard key={project.id} project={project} index={index} projectsItem={projects} />
+                return <ProjectCard key={project.id} project={project} index={index} projectsItem={project} />
             }
             )}
         </BootstrapContainer>

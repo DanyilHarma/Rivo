@@ -1,6 +1,7 @@
 import classes from "./filterComponent.module.scss";
 
 const FilterComponent = ({ categories, onFilterChange, selectedCategory }) => {
+
     return (
         <div className={classes.filterContainer}>
             <button onClick={() => onFilterChange(null)} className={selectedCategory === null ? classes.active : ""}><svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">

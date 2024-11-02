@@ -2,17 +2,17 @@ import ImagesContainer from "../../homepage/projectsPart/projects/imagesContaine
 import classes from "./projectCard.module.scss"
 
 const ProjectCard = ({ project, index, projectsItem }) => {
-    const stack = project.stack[0].stack || [];
+    const stack = project?.attributes?.Content[1]?.stack || [];
 
     return (
         <div className={classes.projectCardContainer}>
-            <h2>{project.brand}</h2>
+            <h2>{project.attributes.brand}</h2>
             <div className={classes.projectCardInfoContainer}>
-                <p>{project.description}</p>
+                <p>{project.attributes.description}</p>
                 <div className={classes.projectCardInfo}>
                     <div>
                         <h6>MVP development time</h6>
-                        <span>{project.developTime}</span>
+                        <span>{project.attributes.developTime} hours</span>
                     </div>
                     <div>
                         <h6>Technologies</h6>
@@ -24,7 +24,7 @@ const ProjectCard = ({ project, index, projectsItem }) => {
                     </div>
                 </div>
             </div>
-            <ImagesContainer data={project} index={index} projectsItem={projectsItem} allProjectPage={true} />
+            <ImagesContainer data={project.attributes} index={index} projectsItem={projectsItem} allProjectPage={true} />
         </div>
     )
 }
