@@ -1,7 +1,11 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-const useFilteredProjects = (projects) => {
-    const [selectedCategory, setSelectedCategory] = useState(null);
+const useFilteredProjects = (projects, initialCategory = null) => {
+    const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+
+    useEffect(() => {
+        setSelectedCategory(initialCategory);
+    }, [initialCategory])
 
     const categories = useMemo(() => {
         const allCategories = projects.flatMap(project =>

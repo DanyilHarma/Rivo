@@ -12,6 +12,28 @@
     }
 }
 
+.category {
+    @include a($textColor, $secondFamily, 14px, 700, $yellow);
+    margin-bottom: -80px;
+
+    button {
+        @include h($textColor, $secondFamily, 14px, 700);
+        text-transform: uppercase;
+        border: none;
+        background-color: transparent;
+        display: flex;
+        align-items: flex-start;
+        gap: 5px;
+
+        &:hover {
+            color: $yellow;
+        }
+
+        &:hover svg path {
+            stroke: $yellow;
+        }
+    }
+}
 
 .projectHeaderInfoContainer {
     display: flex;

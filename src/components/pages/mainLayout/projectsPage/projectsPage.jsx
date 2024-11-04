@@ -4,20 +4,21 @@ import TitleComponent from "../../../general/titleComponent/titleComponent";
 import FilterComponent from "./filterComponent/filterComponent";
 import ProjectCard from "./projectCard/projectCard";
 import useFilteredProjects from "../../../../hooks/useFilteredProjects";
-import { useCallback } from "react";
+
 import { useGetHomepageDataQuery } from "../../../../redux/requests/apiSlice";
+import { useParams } from "react-router-dom";
 
 const ProjectsPage = () => {
     const { data: projectsData, error, isLoading } = useGetProjectsDataQuery();
     const { data: projectsTitle, error1, isLoading2 } = useGetHomepageDataQuery();
 
+    const { category } = useParams();
+
     const projects = projectsData?.data || [];
 
-    const { categories, filteredProjects, selectedCategory, setSelectedCategory } = useFilteredProjects(projects);
+    const { categories, filteredProjects, selectedCategory } = useFilteredProjects(projects, category);
 
-    const handleCategoryClick = useCallback((category) => {
-        setSelectedCategory(category);
-    }, [])
+
 
 
 
@@ -29,7 +30,7 @@ const ProjectsPage = () => {
     return (
         <BootstrapContainer>
             <TitleComponent titleData={titleData} isProjectPage={true} />
-            <FilterComponent categories={categories} onFilterChange={handleCategoryClick} selectedCategory={selectedCategory} />
+            <FilterComponent categories={categories} selectedCategory={selectedCategory} />
             {filteredProjects.map((project, index) => {
                 return <ProjectCard key={project.id} project={project} index={index} projectsItem={project} />
             }
