@@ -2,6 +2,7 @@ import mergeRefs from "../../../../../../../utils/mergeRefs";
 import classes from "./projectArticles.module.scss";
 import MediaSection from "./mediaSection/mediaSection";
 import TextSection from "./textSection/textSection";
+import ProjectCarousel from "./projectCarousel/projectCarousel";
 
 const ProjectArticles = ({ articles, sectionRef, sectionRefs }) => {
 
@@ -22,6 +23,10 @@ const ProjectArticles = ({ articles, sectionRef, sectionRefs }) => {
                     case "projects-data.video":
                         return (
                             <MediaSection key={index} media={article} />
+                        )
+                    case "projects-data.project-carousel":
+                        return (
+                            <ProjectCarousel key={index} images={article.images} article={article} />
                         )
                 }
             })}
