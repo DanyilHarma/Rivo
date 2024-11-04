@@ -23,7 +23,7 @@ const useFilteredProjects = (projects, initialCategory = null) => {
 
         return projects.filter(project =>
             project?.attributes?.expertise?.data.some(expertise =>
-                expertise?.attributes?.expertiseData.some(item => item.type === selectedCategory)
+                expertise?.attributes?.expertiseData.some(item => item.anchor === selectedCategory)
             )
         )
     }, [projects, selectedCategory])

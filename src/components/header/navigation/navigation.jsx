@@ -5,6 +5,7 @@ import MakeButton from './makeOrderButton/makeOrderButton';
 import MenuButton from './menuButton/menuButton';
 import { useState } from 'react';
 import { useGetExpertiseDataQuery } from '../../../redux/requests/apiSlice';
+import { formatText } from '../../../utils/formatText';
 
 const Navigation = () => {
     const [showExpertiseMenu, setShowExpertiseMenu] = useState(false);
@@ -50,13 +51,13 @@ const Navigation = () => {
                             const expertiseItem = expertiseItems[0];
                             const expertiseType = expertiseItem.type;
                             const expertiseId = expertiseItem.id;
-
+                            const formattedText = formatText(expertiseType);
                             if (!expertiseType || !expertiseId) return null;
 
                             return (
                                 <NavLink
                                     key={expertiseId}
-                                    to={`/expertise/${expertiseId}`}
+                                    to={`/expertise/${formattedText}`}
                                     className={classes.dropdownItem}
                                 >
                                     {expertiseType}

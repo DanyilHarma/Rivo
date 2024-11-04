@@ -18,10 +18,6 @@ const ProjectsPage = () => {
 
     const { categories, filteredProjects, selectedCategory } = useFilteredProjects(projects, category);
 
-
-
-
-
     const titleData = projectsTitle?.data?.attributes.projectsTitle.bigTitles;
 
     if (isLoading || isLoading2) return <p>Загрузка...</p>;

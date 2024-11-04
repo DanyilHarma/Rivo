@@ -21,8 +21,8 @@
         box-shadow: -2px 2px 0px 0 $yellow;
     }
 
-    span {
-        @include h($white, $secondFamily, 24px, 700);
+    a {
+        @include a($white, $secondFamily, 24px, 700, $white);
         max-width: 160px;
     }
 }
