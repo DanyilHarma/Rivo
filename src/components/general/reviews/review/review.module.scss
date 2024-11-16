@@ -6,6 +6,14 @@
     justify-content: space-between;
     align-items: center;
     gap: 250px;
+
+    .reviewerPhoto {
+        img {
+            height: 350px;
+            max-width: 100%;
+            object-fit: cover;
+        }
+    }
 }
 
 .reviewInfo {

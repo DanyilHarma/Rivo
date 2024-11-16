@@ -1,0 +1,45 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+aside {
+    height: 94%;
+    position: absolute;
+
+    .aside {
+        position: sticky;
+        top: 100px;
+        left: 0;
+        width: 340px;
+        align-self: flex-start;
+
+
+        nav {
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    padding: 10px;
+                    line-height: 160%;
+                    text-transform: uppercase;
+
+                    a {
+                        @include a($white, $secondFamily, 24px, 700, $yellow);
+
+                        &.active {
+                            display: flex;
+                            gap: 5px;
+
+                            &::before {
+                                content: url("./Arrow_icon.svg");
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}

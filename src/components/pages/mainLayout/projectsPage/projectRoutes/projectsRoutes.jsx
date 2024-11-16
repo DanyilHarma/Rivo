@@ -6,6 +6,7 @@ const ProjectsRoutes = () => {
     return (
         <Routes>
             <Route path="" element={<ProjectsPage />} />
+            <Route path="category/:category" element={<ProjectsPage />} />
             <Route path=":id" element={<ProjectPage />} />
         </Routes>
     )

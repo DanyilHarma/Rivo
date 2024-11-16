@@ -8,7 +8,7 @@ export const apiSlice = createApi({
             query: () => "about-data?populate=categories"
         }),
         getProjectsData: builder.query({
-            query: () => "about-data?populate[rivo_projects][populate]=projectsData"
+            query: () => "about-data?populate[rivo_projects][populate]=Content"
         }),
         sendContactsForm: builder.mutation({
             query: (formData) => ({

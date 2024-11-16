@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "es6"
+        ],
+        "target": "es6",
+        "moduleResolution": "node",
+        "module": "ESNext",
+        "strict": false,
+        "allowJs": true,
+        "checkJs": false,
+        "jsx": "react-jsx",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true
+    },
+    "include": [
+        "src/**/*",
+        "vite.config.js"
+    ],
+    "exclude": [
+        "eslint.config.mjs",
+        "node_modules",
+        "build"
+    ]
+}

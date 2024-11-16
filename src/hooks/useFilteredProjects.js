@@ -1,26 +1,26 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-const useFilteredProjects = (projects) => {
-    const [selectedCategory, setSelectedCategory] = useState(null);
+const useFilteredProjects = (projects, initialCategory = null) => {
+    const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+
+    useEffect(() => {
+        setSelectedCategory(initialCategory);
+    }, [initialCategory])
 
     const categories = useMemo(() => {
         const allCategories = projects.flatMap(project =>
-            project?.expertise?.data.flatMap(expertise =>
-                expertise?.attributes?.expertiseData.map(expertise =>
-                    expertise.type
-                )
-            )
+            project?.attributes?.expertise?.data.flatMap(expertise =>
+                expertise?.attributes?.type
+            ) || []
         )
-        return [...new Set(allCategories)]
+        return [...new Set(allCategories.filter(Boolean))]
     }, [projects])
 
     const filteredProjects = useMemo(() => {
         if (!selectedCategory) return projects;
 
         return projects.filter(project =>
-            project?.expertise?.data.some(expertise =>
-                expertise?.attributes?.expertiseData.some(item => item.type === selectedCategory)
-            )
+            project?.attributes?.expertise?.data[0].attributes.anchor === selectedCategory
         )
     }, [projects, selectedCategory])
 

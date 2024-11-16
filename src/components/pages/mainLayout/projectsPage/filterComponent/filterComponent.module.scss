@@ -5,6 +5,10 @@
     display: flex;
     gap: 15px;
 
+    a {
+        @include a($textColor, $secondFamily, 14px, 700, $yellow);
+    }
+
     button {
         @include h($textColor, $secondFamily, 14px, 700);
         text-transform: uppercase;

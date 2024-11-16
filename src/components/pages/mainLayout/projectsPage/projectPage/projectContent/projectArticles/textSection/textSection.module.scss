@@ -1,0 +1,140 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-self: end;
+    width: 65%;
+    scroll-margin-top: 20px;
+
+    h2 {
+        @include h($white, $secondFamily, 42px, 700);
+        text-transform: uppercase;
+    }
+
+    h6 {
+        @include h($textColor, $secondFamily, 16px, 700);
+        text-transform: uppercase;
+
+        a {
+            @include a($white, $firstFamily, 24px, 500, $white);
+
+            &:hover::after {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                content: url(http://localhost:1338/uploads/Arrow_icon_97e21956cc.svg?updatedAt=2024-10-31T13%3A05%3A36.307Z);
+                display: inline-block;
+                margin-left: 8px;
+                transition: transform .3s ease;
+            }
+
+        }
+    }
+
+    p {
+        @include h($textColor, $firstFamily, 20px, 500);
+
+        a {
+            @include a($yellow, $firstFamily, 20px, 500, $yellow);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    img {
+        border-radius: 10px;
+    }
+
+    ul,
+    ol {
+        padding: 0;
+        margin-top: -40px;
+        list-style-position: inside;
+
+        ::marker {
+            color: $yellow;
+        }
+
+        li {
+            @include h($white, $firstFamily, 20px, 500);
+
+            a {
+                @include a($yellow, $firstFamily, 20px, 500, $yellow);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .technologiesContainer {
+        display: flex;
+        gap: 50px;
+
+        .technoligie {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            span {
+                @include h($white, $firstFamily, 14px, 500)
+            }
+
+            img {
+                width: 50px;
+                height: 50px;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.section.image {
+    width: 100%;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 30%;
+        height: 20%;
+
+    }
+
+    &::before {
+        top: -20%;
+        background: linear-gradient(to bottom,
+                rgba(12, 12, 12, 0) 0%,
+                rgba(12, 12, 12, 0.5) 25%,
+                rgba(12, 12, 12, 0.8) 50%,
+                rgba(12, 12, 12, 1) 100%);
+    }
+
+    &::after {
+        bottom: -20%;
+        background: linear-gradient(to top,
+                rgba(12, 12, 12, 0) 0%,
+                rgba(12, 12, 12, 0.5) 25%,
+                rgba(12, 12, 12, 0.8) 50%,
+                rgba(12, 12, 12, 1) 100%);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        max-height: 625px;
+        object-fit: cover;
+    }
+}

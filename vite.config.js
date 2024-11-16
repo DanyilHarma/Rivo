@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react-swc';
 import eslintPlugin from 'vite-plugin-eslint';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import checker from 'vite-plugin-checker';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -12,7 +13,10 @@ export default defineConfig(({ mode }) => {
   console.log('Vite mode:', mode);
 
   return {
-    plugins: [react(), eslintPlugin({ overrideConfigFile: path.resolve(__dirname, './eslint.config.js') })],
+    plugins: [react(),
+    eslintPlugin({ overrideConfigFile: path.resolve(__dirname, './eslint.config.mjs') }),
+    checker({ typescripe: true })
+    ],
     build: {
       sourcemap: !isProduction,
     },

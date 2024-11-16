@@ -4,29 +4,31 @@ import TitleComponent from "../../../general/titleComponent/titleComponent";
 import FilterComponent from "./filterComponent/filterComponent";
 import ProjectCard from "./projectCard/projectCard";
 import useFilteredProjects from "../../../../hooks/useFilteredProjects";
-import { useCallback } from "react";
+
+import { useGetHomepageDataQuery } from "../../../../redux/requests/apiSlice";
+import { useParams } from "react-router-dom";
 
 const ProjectsPage = () => {
     const { data: projectsData, error, isLoading } = useGetProjectsDataQuery();
+    const { data: projectsTitle, error1, isLoading2 } = useGetHomepageDataQuery();
 
-    const projectDataContent = projectsData?.data[0] || [];
-    const projects = projectDataContent?.attributes?.projectsData || [];
+    const { category } = useParams();
 
-    const { categories, filteredProjects, selectedCategory, setSelectedCategory } = useFilteredProjects(projects);
+    const projects = projectsData?.data || [];
 
-    const handleCategoryClick = useCallback((category) => {
-        setSelectedCategory(category);
-    }, [])
+    const { categories, filteredProjects, selectedCategory } = useFilteredProjects(projects, category);
 
-    if (isLoading) return <p>Загрузка...</p>;
-    if (error) return <p>Ошибка при загрузке данных!</p>;
+    const titleData = projectsTitle?.data?.attributes.projectsTitle.bigTitles;
+
+    if (isLoading || isLoading2) return <p>Загрузка...</p>;
+    if (error || error1) return <p>Ошибка при загрузке данных!</p>;
 
     return (
         <BootstrapContainer>
-            <TitleComponent titleData={projectDataContent?.attributes.titles.bigTitles} />
-            <FilterComponent categories={categories} onFilterChange={handleCategoryClick} selectedCategory={selectedCategory} />
+            <TitleComponent titleData={titleData} isProjectPage={true} />
+            <FilterComponent categories={categories} selectedCategory={selectedCategory} />
             {filteredProjects.map((project, index) => {
-                return <ProjectCard key={project.id} project={project} index={index} projectsItem={projects} />
+                return <ProjectCard key={project.id} project={project} index={index} projectsItem={project} />
             }
             )}
         </BootstrapContainer>

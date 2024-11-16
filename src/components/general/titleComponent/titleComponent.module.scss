@@ -5,6 +5,10 @@
     margin-bottom: 50px;
 }
 
+.isProjectPage {
+    margin-bottom: 0px;
+}
+
 .title {
     @include h($white, $secondFamily, 52px, 700);
 }

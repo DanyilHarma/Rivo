@@ -1,0 +1,8 @@
+@use "@styles/mixins.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.projectArticle {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}

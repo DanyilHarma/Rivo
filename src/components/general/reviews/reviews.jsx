@@ -9,11 +9,11 @@ const Reviews = (props) => {
 
     const { data: projectsData, error, isLoading } = useGetProjectsDataQuery();
 
-    const projectsItem = projectsData?.data?.attributes?.rivo_projects?.data[0]?.attributes?.projectsData || [];
+    const projectsItem = projectsData?.data?.attributes?.rivo_projects?.data || [];
 
     const { state, handleNextReview, handlePrevReview } = useReviewCarousel(projectsItem);
 
-    const currentReview = projectsItem[state.currentReviewIndex]
+    const currentReview = projectsItem[state.currentReviewIndex] || null;
 
     if (isLoading) return <p>Загрузка...</p>;
     if (error) return <p>Ошибка при загрузке данных!</p>;
@@ -21,7 +21,7 @@ const Reviews = (props) => {
     return (
         <div className={classes.reviewsContainer}>
             <TitleComponent titleData={props.reviewsData.bigTitles} />
-            {currentReview && (<Review review={currentReview.reviewInfo} />)}
+            {currentReview && (<Review review={currentReview?.attributes?.Content[0]} />)}
             <div className={classes.indicatorsContainer}>
                 <ProgressCircles progressArray={state.progressArray} currentIndex={state.currentReviewIndex} />
                 <div className={classes.buttons}>

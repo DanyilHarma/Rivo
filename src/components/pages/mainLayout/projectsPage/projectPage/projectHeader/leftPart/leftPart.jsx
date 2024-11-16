@@ -2,7 +2,7 @@ import classes from "./leftPart.module.scss";
 
 const LeftPart = ({ headerProjectData }) => {
 
-    const stackItem = headerProjectData.stack[0].stack || [];
+    const stackItem = headerProjectData?.Content[1]?.stack || [];
 
     return (
         <div className={classes.projectHeaderInfo}>
@@ -14,6 +14,7 @@ const LeftPart = ({ headerProjectData }) => {
                         <img src={item.imgSrc} alt={item.name} />
                         <span>{item.name}</span>
                     </div>
+
                 )}
             </div>
         </div>
