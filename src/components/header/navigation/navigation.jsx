@@ -1,19 +1,30 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import classes from './navigation.module.scss'
 import data from "./navigationData.json"
 import MakeButton from './makeOrderButton/makeOrderButton';
 import MenuButton from './menuButton/menuButton';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useGetExpertiseDataQuery } from '../../../redux/requests/apiSlice';
 import { formatText } from '../../../utils/formatText';
 
 const Navigation = () => {
     const [showExpertiseMenu, setShowExpertiseMenu] = useState(false);
     const { data: expertiseData, error, isLoading } = useGetExpertiseDataQuery();
+    const expertiseMenuRef = useRef(null);
+    const location = useLocation();
+
 
     const handleExpertiseClick = () => {
-        setShowExpertiseMenu((prevState) => !prevState);
+        setShowExpertiseMenu(true);
     }
+
+    const handleClosePopup = () => {
+        setShowExpertiseMenu(false);
+    }
+
+    useEffect(() => {
+        handleClosePopup();
+    }, [location]);
 
     return (
         <nav>
@@ -40,7 +51,7 @@ const Navigation = () => {
 
                 ))}
                 {showExpertiseMenu && (
-                    <div className={classes.dropdownMenu}>
+                    <div className={classes.dropdownMenu} ref={expertiseMenuRef} onMouseLeave={handleClosePopup}>
                         {isLoading && <p>Loading...</p>}
                         {error && <p>Error loading expertise data</p>}
                         {expertiseData?.data?.map((expertise) => {
@@ -59,6 +70,7 @@ const Navigation = () => {
                                     key={expertiseId}
                                     to={`/expertise/${formattedText}`}
                                     className={classes.dropdownItem}
+                                    onClick={handleClosePopup}
                                 >
                                     {expertiseType}
                                 </NavLink>

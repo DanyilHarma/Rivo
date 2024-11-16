@@ -28,7 +28,7 @@ function App() {
         </Routes>
       </ScrollToTop>
     </div >
-  )
-}
+  );
+};
 
 export default App;

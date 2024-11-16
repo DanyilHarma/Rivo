@@ -6,8 +6,9 @@ const ContactButtonFixed = () => {
     const { isContactVisible, sectionRef } = useContactVisibility();
 
     const location = useLocation()
-    const specialPage = ["/menu", "/privacy", "/projects"];
-    const isSpecialPage = specialPage.includes(location.pathname)
+    const isSpecialPage =
+        ["/menu", "/privacy", "/projects", "/projects/category"].includes(location.pathname) ||
+        /^\/projects\/category/.test(location.pathname);
 
     const handleClick = () => {
         if (isContactVisible) {
