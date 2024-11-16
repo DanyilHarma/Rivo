@@ -7,7 +7,9 @@ import RightPart from "./rightPart/rightPart";
 import { formatText } from "../../../../../../utils/formatText";
 
 const ProjectHeader = ({ headerProjectData, aboutRef }) => {
-    const category = headerProjectData?.expertise?.data[0]?.attributes?.expertiseData[0]?.type;
+
+    const category = headerProjectData?.expertise?.data[0]?.attributes?.type;
+
     const formattedText = formatText(category);
     return (
         <BootstrapContainer>
