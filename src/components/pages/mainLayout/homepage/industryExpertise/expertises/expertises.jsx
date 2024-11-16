@@ -5,10 +5,10 @@ import classes from "./expertises.module.scss"
 const Expertises = ({ categories }) => {
 
     const getExpertiseType = useCallback((expertise) => {
-        const expertiseItems = expertise.attributes.expertiseData;
+        const expertiseItems = expertise.attributes.type;
 
         if (expertiseItems && expertiseItems.length > 0) {
-            return expertiseItems[0].type;
+            return expertiseItems;
         }
         return null;
     }, []);

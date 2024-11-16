@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react(),
-    eslintPlugin({ overrideConfigFile: path.resolve(__dirname, './eslint.config.js') }),
+    eslintPlugin({ overrideConfigFile: path.resolve(__dirname, './eslint.config.mjs') }),
     checker({ typescripe: true })
     ],
     build: {

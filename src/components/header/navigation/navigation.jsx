@@ -55,20 +55,17 @@ const Navigation = () => {
                         {isLoading && <p>Loading...</p>}
                         {error && <p>Error loading expertise data</p>}
                         {expertiseData?.data?.map((expertise) => {
-                            const expertiseItems = expertise.attributes.expertiseData;
-                            if (!expertiseItems || expertiseItems.length === 0) return null;
+                            const expertiseType = expertise.attributes.type;
+                            if (!expertiseType || expertiseType.length === 0) return null;
 
-
-                            const expertiseItem = expertiseItems[0];
-                            const expertiseType = expertiseItem.type;
-                            const expertiseId = expertiseItem.id;
+                            // const expertiseId = expertiseType.id;
                             const formattedText = formatText(expertiseType);
-                            if (!expertiseType || !expertiseId) return null;
+                            if (!expertiseType) return null;
 
                             return (
                                 <NavLink
-                                    key={expertiseId}
-                                    to={`/expertise/${formattedText}`}
+                                    key={formattedText}
+                                    to={`/expertises/${formattedText}`}
                                     className={classes.dropdownItem}
                                     onClick={handleClosePopup}
                                 >

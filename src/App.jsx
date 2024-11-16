@@ -8,6 +8,7 @@ import ScrollToTop from "./components/scrollToTop/scrollToTop.jsx"
 import PrivacyPage from "./components/pages/mainLayout/privacyPage/privacyPage.jsx"
 import CareerRoutes from "./components/pages/mainLayout/careerPage/careerRoutes/careerRoutes.jsx"
 import ProjectsRoutes from "./components/pages/mainLayout/projectsPage/projectRoutes/projectsRoutes.jsx"
+import ExpertisesPage from "./components/pages/mainLayout/expertisesPages/expertisesPage.tsx"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/response/:type" element={<ContactFormResponse />} />
             <Route path="/career/*" element={<CareerRoutes />} />
             <Route path="/projects/*" element={<ProjectsRoutes />} />
+            <Route path="/expertises/:type" element={<ExpertisesPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
           </Route>
           <Route element={<MenuLayout />}>

@@ -10,7 +10,7 @@ const ExpertiseRow = (props) => {
                 const formattedText = formatText(row);
 
                 return <div key={index} className={`col-3 ${classes.expertise}`}>
-                    <NavLink to={`/expertise/${formattedText}`}>{row}</NavLink>
+                    <NavLink to={`/expertises/${formattedText}`}>{row}</NavLink>
                 </div>
             })}
         </div>
